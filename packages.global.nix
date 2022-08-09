@@ -26,6 +26,6 @@ let packages = [
   # Editor
   pkgs-unstable.neovim
 ];
-in packages
-
+in
+packages
 

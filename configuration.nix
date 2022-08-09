@@ -102,7 +102,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = import ./packages.global.nix { inherit pkgs pkgs-unstable; };
-
+  # Add ~/.local/bin/ to $PATH 
+  environment.localBinInPath = true;
+  
   programs = import ./programs.global.nix { inherit pkgs; };
 
   # Some programs need SUID wrappers, can be configured further or are
