@@ -103,7 +103,7 @@
   # $ nix search wget
   environment.systemPackages = import ./packages.global.nix { inherit pkgs pkgs-unstable; };
 
-  programs = import ./programs.global.nix;
+  programs = import ./programs.global.nix { inherit pkgs; };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

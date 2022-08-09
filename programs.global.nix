@@ -1,3 +1,5 @@
+{ pkgs }:
+
 {
   git = {
     enable = true;
