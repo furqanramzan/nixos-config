@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, username, ... }:
+{ config, pkgs, pkgs-unstable, username, ... }:
 
 {
   imports =
@@ -101,7 +101,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = import ./packages.global.nix { inherit pkgs; };
+  environment.systemPackages = import ./packages.global.nix { inherit pkgs pkgs-unstable; };
 
   programs = import ./programs.global.nix;
 
