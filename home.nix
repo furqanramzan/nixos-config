@@ -5,7 +5,7 @@
 , username }:
 
 let
-  packages = import ./packages.nix { inherit pkgs; };
+  packages = import ./packages.home.nix { inherit pkgs; };
 in {
   home = {
     inherit homeDirectory packages stateVersion username;
@@ -24,5 +24,5 @@ in {
     };
   };
 
-  programs = import ./programs.nix;
+  programs = import ./programs.home.nix;
 }
