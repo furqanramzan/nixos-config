@@ -1,38 +1,39 @@
-{ pkgs }:
+{ pkgs, ... }:
 
-let nixTools = with pkgs; [
-  google-chrome
-  vivaldi
-  opera
-  transmission
+{
+  home.packages = with pkgs; [
+    google-chrome
+    vivaldi
+    opera
+    transmission
 
-  anydesk
-  teamviewer
+    anydesk
+    teamviewer
 
-  libreoffice
-  calibre
+    libreoffice
+    calibre
 
-  blender
-  gimp
-  kdenlive
-  inkscape
-  handbrake
+    blender
+    gimp
+    kdenlive
+    inkscape
+    handbrake
 
-  easytag
-  audacity-gtk3
+    easytag
+    audacity-gtk3
 
-  sqlitebrowser
-  drawio
-  insomnia
-  postman
-  vscode
+    sqlitebrowser
+    drawio
+    insomnia
+    postman
+    vscode
 
-  vlc
-  mpv
-  pavucontrol # Audio Control
-  cmus # Command line audio player
+    vlc
+    mpv
+    pavucontrol # Audio Control
+    cmus # Command line audio player
 
-  slack
-  skypeforlinux
-];
-in nixTools
+    slack
+    skypeforlinux
+  ];
+}

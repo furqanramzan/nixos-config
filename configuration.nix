@@ -5,11 +5,13 @@
 { config, pkgs, pkgs-unstable, username, ... }:
 
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./programs.global.nix
+    ./packages.global.nix
+    ./services.global.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -43,8 +45,6 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-
-  services = import ./services.global.nix;
 
   # Fonts 
   fonts.fonts = with pkgs; [
@@ -90,9 +90,6 @@
   nix.gc.dates = "monthly";
   nix.gc.options = "--delete-older-than 30d";
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = import ./packages.global.nix { inherit pkgs pkgs-unstable; };
   # Add ~/.local/bin/ to $PATH 
   environment.localBinInPath = true;
   environment.variables = {
@@ -100,18 +97,6 @@
     EDITOR = "nvim";
     VISUAL = "nvim";
   };
-
-  programs = import ./programs.global.nix { inherit pkgs; };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

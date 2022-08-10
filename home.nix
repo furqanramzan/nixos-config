@@ -3,22 +3,24 @@
 , stateVersion
 , system
 , username
+, ...
 }:
 
-let
-  packages = import ./packages.home.nix { inherit pkgs; };
-in
 {
+  imports = [
+    # Include the results of the hardware scan.
+    ./programs.home.nix
+    ./packages.home.nix
+    ./activation.home.nix
+    ./files.home.nix
+  ];
+
   home = {
-    inherit homeDirectory packages stateVersion username;
+    inherit homeDirectory stateVersion username;
 
     shellAliases = {
       reload-home-manager-config = "home-manager switch --flake ${builtins.toString ./.}";
     };
-
-    activation = import ./activation.home.nix { inherit homeDirectory; }; # Run scripts during rebuild/switch
-
-    file = import ./files.home.nix; # Copy files to home directory
   };
 
   nixpkgs = {
@@ -29,7 +31,5 @@ in
       experimental-features = "nix-command flakes";
     };
   };
-
-  programs = import ./programs.home.nix;
 }
 
