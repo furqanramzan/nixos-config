@@ -2,9 +2,21 @@
 
 let nixTools = with pkgs; [
   google-chrome
-  anydesk
-  libreoffice
+  vivaldi
+  opera
   transmission
+
+  anydesk
+  teamviewer
+
+  libreoffice
+  calibre
+
+  blender
+  gimp
+  kdenlive
+  inkscape
+  handbrake
 
   easytag
   audacity-gtk3
@@ -13,10 +25,12 @@ let nixTools = with pkgs; [
   drawio
   insomnia
   postman
+  vscode
 
   vlc
   mpv
   pavucontrol # Audio Control
+  cmus # Command line audio player
 
   slack
   skypeforlinux

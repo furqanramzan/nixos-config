@@ -35,9 +35,12 @@ let packages = [
   pkgs.pfetch # Minimal Fetch
   pkgs.unzip # Decompress zip files.
   pkgs.unrar # Decompress zip files.
+  pkgs.tmux
+  pkgs.lazygit
 
   # Editor
   pkgs-unstable.neovim
+  pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
 ];
 in
 packages
