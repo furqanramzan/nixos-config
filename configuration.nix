@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -20,7 +21,7 @@
 
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
   time.timeZone = "Asia/Karachi";
@@ -43,42 +44,32 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services = import ./services.global.nix;
 
-  # Enable the XFCE Desktop Environment and i3 Window Manager.
-  services.xserver.displayManager.lightdm.enable = true;
-  #services.xserver.desktopManager.xfce.enable = true;
-  services.xserver.windowManager.i3.enable = true;
-  services.xserver.displayManager.defaultSession = "none+i3";
+  fonts.fonts = with pkgs; [
+    # Fonts
+    carlito # NixOS
+    vegur # NixOS
+    source-code-pro
+    jetbrains-mono
+    font-awesome # Icons
+    corefonts # MS
+    nerdfonts # Terminal Fonts
+    nafees # Urdu
+    google-fonts
+  ];
 
-  # Configure keymap in X11
-  services.xserver.layout = "us";
-  services.xserver.xkbVariant = "";
-  # services.xserver.xkbOptions = {
-  #   "eurosign:e";
-  #   "caps:escape" # map caps to escape.
-  # };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
+  sound = {
+    # ALSA sound enable
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+    mediaKeys = {
+      # Keyboard Media Keys (for minimal desktop)
+      enable = true;
+    };
   };
+  hardware.pulseaudio.enable = false;
+
+  security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -86,11 +77,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user, wheel group.
-  #   packages = with pkgs; [
-  #     firefox
-  #     thunderbird
-  #   ];
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" ]; # Enable ‘sudo’ for the user, wheel group.
   };
 
   # Run garbage collector after every month.
@@ -104,7 +91,12 @@
   environment.systemPackages = import ./packages.global.nix { inherit pkgs pkgs-unstable; };
   # Add ~/.local/bin/ to $PATH 
   environment.localBinInPath = true;
-  
+  environment.variables = {
+    TERMINAL = "kitty";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   programs = import ./programs.global.nix { inherit pkgs; };
 
   # Some programs need SUID wrappers, can be configured further or are
