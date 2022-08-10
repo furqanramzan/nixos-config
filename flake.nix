@@ -19,7 +19,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config = {
-          allowUnfree = true;
+          allowUnfree = true; # Allow proprietary software.
         };
       };
       pkgs-unstable = import nixpkgs-unstable {

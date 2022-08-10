@@ -1,7 +1,5 @@
 {
   services = {
-
-
     xserver = {
       # Enable the X11 windowing system.
       enable = true;
@@ -71,5 +69,10 @@
     tlp = {
       enable = true; # TLP and auto-cpufreq for power management
     };
+    # Enable the OpenSSH daemon. 
+    # openssh = {
+    #   enable = true;
+    # };
+
   };
 }
