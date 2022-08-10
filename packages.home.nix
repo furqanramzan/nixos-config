@@ -16,6 +16,7 @@ let nixTools = with pkgs; [
 
   vlc
   mpv
+  pavucontrol # Audio Control
 
   slack
   skypeforlinux

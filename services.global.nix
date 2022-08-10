@@ -19,11 +19,32 @@
       # Default session when login, can be change when login.
       defaultSession = "none+i3";
     };
+    libinput = {
+      # Trackpad support & gestures
+      enable = true;
+      touchpad = {
+        tapping = true;
+        scrollMethod = "twofinger";
+        naturalScrolling = true; # The correct way of scrolling
+        accelProfile = "adaptive"; # Speed settings
+        #accelSpeed = "-0.5";
+        disableWhileTyping = true;
+      };
+    };
   };
   # Enable CUPS to print documents.
   printing = {
     enable = true;
   };
+  # Automatic CPU speed & power optimizer for Linux based on active monitoring of laptop's battery state
+  auto-cpufreq = {
+    enable = true;
+  };
+  # Blutooth Manager
+  blueman = {
+    enable = true;
+  };
+
   # Sound
   pipewire = {
     enable = true;

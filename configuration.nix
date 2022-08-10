@@ -46,6 +46,7 @@
 
   services = import ./services.global.nix;
 
+  # Fonts 
   fonts.fonts = with pkgs; [
     # Fonts
     carlito # NixOS
@@ -54,10 +55,13 @@
     jetbrains-mono
     font-awesome # Icons
     corefonts # MS
-    nerdfonts # Terminal Fonts
+    terminus-nerdfont # Terminal Fonts
     nafees # Urdu
-    google-fonts
   ];
+  console = {
+    font = "Lat2-Terminus16";
+    keyMap = "us"; # or us/azerty/etc
+  };
 
   sound = {
     # ALSA sound enable
@@ -67,8 +71,8 @@
       enable = true;
     };
   };
-  hardware.pulseaudio.enable = false;
-
+  hardware.acpilight.enable = true; # Brightness control via xbacklight from users in the video group.
+  # Not strictly required but pipewire will use rtkit if it is present
   security.rtkit.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
