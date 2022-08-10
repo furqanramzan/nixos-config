@@ -32,16 +32,17 @@
       homeDirPrefix = if pkgs.stdenv.hostPlatform.isDarwin then "/Users" else "/home";
       homeDirectory = "${homeDirPrefix}/${username}";
 
-      home = (import ./home.nix {
+      home = (import ./home/default.nix {
         inherit homeDirectory pkgs stateVersion system username;
       });
-    in {      
+    in
+    {
       nixosConfigurations = {
-        configuration = nixpkgs.lib.nixosSystem {
+        config = nixpkgs.lib.nixosSystem {
           inherit system;
-	  specialArgs = { inherit username pkgs pkgs-unstable; };
+          specialArgs = { inherit username pkgs pkgs-unstable; };
           modules = [
-            ./configuration.nix
+            ./system/default.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

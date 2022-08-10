@@ -8,9 +8,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./programs.global.nix
-    ./packages.global.nix
-    ./services.global.nix
+    ./programs.nix
+    ./packages.nix
+    ./services.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

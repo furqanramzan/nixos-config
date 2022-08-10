@@ -9,10 +9,10 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./programs.home.nix
-    ./packages.home.nix
-    ./activation.home.nix
-    ./files.home.nix
+    ./programs.nix
+    ./packages.nix
+    ./activation.nix
+    ./files.nix
   ];
 
   home = {
