@@ -5,20 +5,20 @@
       enable = true;
       layout = "us";
       xkbVariant = "";
-      windowManager = {
-        # Enable the i3 window manager.
-        i3 = {
-          enable = true;
-        };
+      # windowManager = {
+      #   # Enable the i3 window manager.
+      #   i3 = {
+      #     enable = true;
+      #   };
 
-      };
+      # };
       displayManager = {
         # Enable lightdm display manager.
-        lightdm = {
+        sddm = {
           enable = true;
         };
         # Default session when login, can be change when login.
-        defaultSession = "none+i3";
+        defaultSession = "sway";
       };
       libinput = {
         # Trackpad support & gestures
