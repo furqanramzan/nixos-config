@@ -68,12 +68,12 @@
     };
   };
 
-  hardware = {
-    # Brightness control via xbacklight from users in the video group.
-    acpilight = {
-      enable = true;
-    };
-  };
+  # hardware = {
+  #   # Brightness control via xbacklight from users in the video group.
+  #   acpilight = {
+  #     enable = true;
+  #   };
+  # };
   security = {
     # Not strictly required but pipewire will use rtkit if it is present
     rtkit = {

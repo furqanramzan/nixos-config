@@ -10,5 +10,6 @@
     git = {
       enable = true;
     };
+    light.enable = true;
   };
 }

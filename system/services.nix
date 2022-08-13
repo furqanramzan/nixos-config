@@ -12,14 +12,15 @@
       #   };
 
       # };
-      displayManager = {
-        # Enable lightdm display manager.
-        sddm = {
-          enable = true;
-        };
-        # Default session when login, can be change when login.
-        defaultSession = "sway";
-      };
+      # displayManager = {
+      #   # Enable lightdm display manager.
+      #   sddm = {
+      #     enable = true;
+      #   };
+      #   autoLogin.enable = true;
+      #   # Default session when login, can be change when login.
+      #   defaultSession = "sway";
+      # };
       libinput = {
         # Trackpad support & gestures
         enable = true;

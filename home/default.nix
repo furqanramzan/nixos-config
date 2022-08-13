@@ -10,6 +10,7 @@
     ./packages.nix
     ./activation.nix
     ./files.nix
+    ./desktop/default.nix
   ];
 
   home = {
