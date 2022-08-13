@@ -29,6 +29,93 @@
       bars = [{
         command = "waybar";
       }];
+      colors.focused = {
+        background = "#999999";
+        border = "#999999";
+        childBorder = "#999999";
+        indicator = "#212121";
+        text = "#999999";
+      };
+
+      keybindings = {
+        # Hotkeys
+        "${modifier}+Escape" = "exec swaymsg exit"; # Exit Sway
+        "${modifier}+Return" = "exec ${terminal}"; # Open terminal
+        "${modifier}+space" = "exec ${menu}"; # Open menu
+        "${modifier}+e" = "exec ${pkgs.pcmanfm}/bin/pcmanfm"; # File Manager
+        "${modifier}+l" = "exec ${pkgs.swaylock-fancy}/bin/swaylock-fancy"; # Lock Screen
+
+        "${modifier}+r" = "reload"; # Reload environment
+        "${modifier}+q" = "kill"; # Kill container
+        "${modifier}+f" = "fullscreen toggle"; # Fullscreen
+        "${modifier}+h" = "floating toggle"; # Floating
+
+        "${modifier}+Left" = "focus left"; # Focus container in workspace
+        "${modifier}+Right" = "focus right";
+        "${modifier}+Up" = "focus up";
+        "${modifier}+Down" = "focus down";
+
+        "${modifier}+Shift+Left" = "move left"; # Move container in workspace
+        "${modifier}+Shift+Right" = "move right";
+        "${modifier}+Shift+Up" = "move up";
+        "${modifier}+Shift+Down" = "move down";
+
+        #"${modifier}+Left" = "workspace prev";                  # Navigate to previous or next workspace if it exists
+        #"${modifier}+Right" = "workspace next";
+        # "${modifier}+Left" = "workspace prev_on_output"; # Navigate to previous or next workspace on output if it exists
+        # "${modifier}+Right" = "workspace next_on_output";
+
+        "${modifier}+1" = "workspace number 1"; # Open workspace x
+        "${modifier}+2" = "workspace number 2";
+        "${modifier}+3" = "workspace number 3";
+        "${modifier}+4" = "workspace number 4";
+        "${modifier}+5" = "workspace number 5";
+
+        # "${modifier}+Shift+Left" = "move container to workspace prev, workspace prev"; # Move container to next available workspace and focus
+        # "${modifier}+Shift+Right" = "move container to workspace next, workspace next";
+
+        "${modifier}+Shift+1" = "move container to workspace number 1"; # Move container to specific workspace
+        "${modifier}+Shift+2" = "move container to workspace number 2";
+        "${modifier}+Shift+3" = "move container to workspace number 3";
+        "${modifier}+Shift+4" = "move container to workspace number 4";
+        "${modifier}+Shift+5" = "move container to workspace number 5";
+
+        "Control+Up" = "resize shrink height 20px"; # Resize container
+        "Control+Down" = "resize grow height 20px";
+        "Control+Left" = "resize shrink width 20px";
+        "Control+Right" = "resize grow width 20px";
+
+        "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui"; # Screenshots
+
+        "XF86AudioLowerVolume" = "exec ${pkgs.pamixer}/bin/pamixer -d 10"; #Volume control
+        "XF86AudioRaiseVolume" = "exec ${pkgs.pamixer}/bin/pamixer -i 10";
+        "XF86AudioMute" = "exec ${pkgs.pamixer}/bin/pamixer -t"; #Media control
+        "XF86AudioMicMute" = "exec ${pkgs.pamixer}/bin/pamixer --default-source -t";
+        #"XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+        #"XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
+        #"XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+        #
+        "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U  5"; # Display brightness control
+        "XF86MonBrightnessUp" = "exec ${pkgs.light}/bin/light -A 5";
+      };
     };
+    extraConfig = ''
+      set $opacity 0.8
+      for_window [class=".*"] opacity 0.95
+      for_window [app_id=".*"] opacity 0.95
+      for_window [app_id="pcmanfm"] opacity 0.95, floating enable
+      for_window [app_id="Alacritty"] opacity $opacity
+      for_window [title="drun"] opacity $opacity
+      for_window [class="Emacs"] opacity $opacity
+      for_window [app_id="pavucontrol"] floating enable, sticky
+      for_window [app_id=".blueman-manager-wrapped"] floating enable
+      for_window [title="Picture in picture"] floating enable, move position 1205 634, resize set 700 400, sticky enable
+    ''; # $ swaymsg -t get_tree or get_outputs
+    extraSessionCommands = ''
+      #export WLR_NO_HARDWARE_CURSORS="1";  # Needed for cursor in vm
+      export XDG_SESSION_TYPE=wayland
+      export XDG_SESSION_DESKTOP=sway
+      export XDG_CURRENT_DESKTOP=sway
+    '';
   };
 }
