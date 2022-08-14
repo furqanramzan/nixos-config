@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   services = {
     xserver = {
@@ -69,6 +71,15 @@
     };
     tlp = {
       enable = true; # TLP and auto-cpufreq for power management
+    };
+    mysql = {
+      enable = true;
+      package = pkgs.mysql80;
+      settings = {
+        mysqld = {
+          default_authentication_plugin = "mysql_native_password";
+        };
+      };
     };
     # Enable the OpenSSH daemon. 
     # openssh = {
