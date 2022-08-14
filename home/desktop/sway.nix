@@ -7,7 +7,7 @@
     config = rec {
       # Sway configuration
       modifier = "Mod4";
-      terminal = "${pkgs.alacritty}/bin/alacritty";
+      terminal = "${pkgs.kitty}/bin/kitty";
       menu = "${pkgs.rofi}/bin/rofi -show drun";
 
       startup = [
@@ -80,10 +80,10 @@
         "${modifier}+Shift+4" = "move container to workspace number 4";
         "${modifier}+Shift+5" = "move container to workspace number 5";
 
-        "Control+Up" = "resize shrink height 20px"; # Resize container
-        "Control+Down" = "resize grow height 20px";
-        "Control+Left" = "resize shrink width 20px";
-        "Control+Right" = "resize grow width 20px";
+        "${modifier}+Alt+Up" = "resize shrink height 20px"; # Resize container
+        "${modifier}+Alt+Down" = "resize grow height 20px";
+        "${modifier}+Alt+Left" = "resize shrink width 20px";
+        "${modifier}+Alt+Right" = "resize grow width 20px";
 
         "Print" = "exec ${pkgs.flameshot}/bin/flameshot gui"; # Screenshots
 

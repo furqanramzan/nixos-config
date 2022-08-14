@@ -38,6 +38,7 @@
     pkgs.unrar # Decompress zip files.
     pkgs.tmux
     pkgs.lazygit
+    pkgs.ranger # Console based file manager
 
     # Editor
     pkgs-unstable.neovim

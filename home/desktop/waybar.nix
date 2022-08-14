@@ -1,60 +1,93 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.waybar = {
     enable = true;
-    style = ''
-      * {
-        border: none;
-        font-family: FiraCode Nerd Font Mono;
-        font-weight: bold;
-      }
-      window#waybar {
-        background-color: rgba(0,0,0,0.5);
-        background: transparent;
-        transition-property: background-color;
-        transition-duration: .5s;
-        border-bottom: none;
-      }
-      window#waybar.hidden {
-        opacity: 0.2;
-      }
-      #workspace,
-      #mode,
-      #clock,
-      #pulseaudio,
-      #network,
-      #mpd,
-      #memory,
-      #network,
-      #window,
-      #cpu,
-      #disk,
-      #battery,
-      #tray {
-        color: #999999;
-        margin: 2px 16px 2px 16px;
-        background-clip: padding-box;
-      }
-      #workspaces button {
-        padding: 0 5px;
-        min-width: 15px;
-      }
-      #workspaces button:hover {
-        background-color: rgba(0,0,0,0.2);
-      }
-      #workspaces button.focused {
-        color: #ccffff;
-      }
-      #battery.warning {
-        color: #ff5d17;
-      }
-      #battery.critical {
-        color: #ff200c;
-      }
-      #battery.charging {
-        color: #9ece6a;
-      }
-    '';
+
+    # Cheatsheet:
+    # x -> all sides
+    # x y -> vertical, horizontal
+    # x y z -> top, horizontal, bottom
+    # w x y z -> top, right, bottom, left
+    style =
+      let inherit (config.colorscheme) colors; in
+      ''
+        * {
+          font-family: FiraCode Nerd Font Mono;
+          font-size: 12pt;
+          padding: 0 8px;
+        }
+
+        .modules-right {
+          margin-right: -15;
+        }
+
+        .modules-left {
+          margin-left: -15;
+        }
+
+        window#waybar.top {
+          color: #${colors.base05};
+          opacity: 0.95;
+          background-color: #${colors.base00};
+          border: 2px solid #${colors.base0C};
+          padding: 0;
+          border-radius: 10px;
+        }
+        window#waybar.bottom {
+          color: #${colors.base05};
+          background-color: #${colors.base00};
+          border: 2px solid #${colors.base0C};
+          opacity: 0.90;
+          border-radius: 10px;
+        }
+
+        #workspaces button {
+          background-color: #${colors.base01};
+          color: #${colors.base05};
+          margin: 4px;
+        }
+        #workspaces button.hidden {
+          background-color: #${colors.base00};
+          color: #${colors.base04};
+        }
+        #workspaces button.focused,
+        #workspaces button.active {
+          background-color: #${colors.base0A};
+          color: #${colors.base00};
+        }
+
+        #clock {
+          background-color: #${colors.base0C};
+          color: #${colors.base00};
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-top: 0;
+          margin-bottom: 0;
+          border-radius: 10px;
+        }
+
+        #custom-menu {
+          background-color: #${colors.base0C};
+          color: #${colors.base00};
+          padding-left: 15px;
+          padding-right: 22px;
+          margin-left: 0;
+          margin-right: 10px;
+          margin-top: 0;
+          margin-bottom: 0;
+          border-radius: 10px;
+        }
+        #custom-hostname {
+          background-color: #${colors.base0C};
+          color: #${colors.base00};
+          padding-left: 15px;
+          padding-right: 18px;
+          margin-right: 0;
+          margin-top: 0;
+          margin-bottom: 0;
+          border-radius: 10px;
+        }
+      '';
     settings = [{
       layer = "bottom";
       position = "top";
