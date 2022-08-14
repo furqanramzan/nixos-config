@@ -99,7 +99,7 @@
       # ];
       tray = { spacing = 10; };
       modules-center = [ "clock" ];
-      modules-left = [ "sway/workspaces" "sway/window" "sway/mode" ];
+      modules-left = [ "sway/workspaces" ];
       #modules-left = [ "wlr/workspaces" ];
       modules-right = [ "cpu" "memory" "disk" "pulseaudio" "battery" "network" "tray" ];
       # modules-right = [ "cpu" "memory" "pulseaudio" "clock" "tray" ];
@@ -136,7 +136,8 @@
         on-click = "activate";
       };
       clock = {
-        format = "{:%b %d %H:%M}";
+        interval = 1;
+        format = "{:%a %d %b %I:%M:%S %p}";
         tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt = "{:%A, %B %d, %Y} ";
       };
