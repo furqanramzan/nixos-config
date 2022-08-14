@@ -6,6 +6,7 @@
     vivaldi
     opera
     transmission
+    youtube-dl
 
     anydesk
     teamviewer
