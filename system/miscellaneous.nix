@@ -59,27 +59,12 @@
     keyMap = "us"; # or us/azerty/etc
   };
 
-  # sound = {
-    # # ALSA sound enable
-    # enable = true;
-    # mediaKeys = {
-      # # Keyboard Media Keys (for minimal desktop)
-      # enable = true;
+  hardware = {
+    # Brightness control via xbacklight from users in the video group.
+    # acpilight = {
+    #   enable = true;
     # };
-  # };
-
-  # hardware = {
-  #   # Brightness control via xbacklight from users in the video group.
-  #   acpilight = {
-  #     enable = true;
-  #   };
-  # };
-  # security = {
-    # Not strictly required but pipewire will use rtkit if it is present
-    # rtkit = {
-      # enable = true;
-    # };
-  # };
+  };
 
   environment = {
     # Add ~/.local/bin/ to $PATH 

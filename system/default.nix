@@ -14,6 +14,7 @@
     ./fonts.nix
     ./nix.nix
     ./miscellaneous.nix
+    ./hardware
     # ./sway.nix
   ];
 
