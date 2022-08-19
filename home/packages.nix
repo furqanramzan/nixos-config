@@ -5,8 +5,7 @@
     google-chrome
     vivaldi
     opera
-    transmission
-    youtube-dl
+    transmission-qt
 
     anydesk
     teamviewer

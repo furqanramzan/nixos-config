@@ -13,7 +13,7 @@
       enable = true;
     };
     # Whether to install Light backlight control command and udev rules granting access to members of the "video" group. 
-    light.enable = true;
+    # light.enable = true;
     neovim = {
       enable = true;
       # Make neovim default editor

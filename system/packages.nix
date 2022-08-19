@@ -31,8 +31,8 @@
     pkgs.btop # Replacement of htop.
     pkgs.parted # Disk partitioning tool.
     pkgs.killall
-    pkgs.pciutils # The PCI Utilities.
-    pkgs.usbutils # The USB Utilities.
+    # pkgs.pciutils # The PCI Utilities.
+    # pkgs.usbutils # The USB Utilities.
     pkgs.pfetch # Minimal Fetch
     pkgs.unzip # Decompress zip files.
     pkgs.unrar # Decompress zip files.
