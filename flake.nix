@@ -20,6 +20,8 @@
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, plasma-manager }:
     let
       username = "furqan"; # $USER
+      name = "Muhammad Furqan"; # $NAME
+      email = "furqanramzan271996@gmail.com"; # $EMAIL
       system = "x86_64-linux";  # x86_64-linux, aarch64-multiplatform, etc.
       stateVersion = "22.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
 
@@ -43,7 +45,7 @@
       nixosConfigurations = {
         config = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit username pkgs pkgs-unstable; };
+          specialArgs = { inherit username name email pkgs pkgs-unstable; };
           modules = [
             ./system/default.nix
             home-manager.nixosModules.home-manager
@@ -56,7 +58,7 @@
               home-manager.users.${username}.imports = [
                 plasma-manager.homeManagerModules.plasma-manager
                 (import ./home/default.nix {
-                  inherit homeDirectory pkgs stateVersion system username nix-colors;
+                  inherit homeDirectory pkgs stateVersion system username name email nix-colors;
                 })
               ];
             }
