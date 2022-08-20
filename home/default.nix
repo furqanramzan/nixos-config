@@ -8,11 +8,10 @@
 {
   imports = [
     nix-colors.homeManagerModule
-    ./programs.nix
+    ./programs
     ./packages.nix
     ./activation.nix
     ./files.nix
-    ./desktop/default.nix
   ];
 
   colorScheme = nix-colors.colorSchemes.dracula;
