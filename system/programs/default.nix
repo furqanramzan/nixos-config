@@ -9,5 +9,6 @@
     ./sddm.nix
     ./plasma.nix
     ./java.nix
+    ./node.nix
   ];
 }
