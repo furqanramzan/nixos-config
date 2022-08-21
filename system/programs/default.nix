@@ -8,5 +8,6 @@
     ./mysql.nix
     ./sddm.nix
     ./plasma.nix
+    ./java.nix
   ];
 }

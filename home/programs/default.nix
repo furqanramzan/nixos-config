@@ -10,5 +10,6 @@
     ./chromium.nix
     ./vscode.nix
     ./vlc
+    ./fish.nix
   ];
 }

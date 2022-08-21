@@ -20,9 +20,6 @@
     # PHP
     pkgs.php81
     pkgs.php81Packages.composer
-    # Java
-    pkgs.jdk # The JDK includes JRE.
-
 
     # System Utilities
     pkgs.which
