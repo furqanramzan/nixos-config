@@ -27,7 +27,6 @@
     insomnia
     postman
 
-    vlc
     mpv
     pavucontrol # Audio Control
     cmus # Command line audio player

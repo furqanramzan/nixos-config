@@ -11,7 +11,6 @@
     ./programs
     ./packages.nix
     ./activation.nix
-    ./files.nix
   ];
 
   colorScheme = nix-colors.colorSchemes.dracula;

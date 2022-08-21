@@ -9,5 +9,6 @@
     ./firefox.nix
     ./chromium.nix
     ./vscode.nix
+    ./vlc
   ];
 }
