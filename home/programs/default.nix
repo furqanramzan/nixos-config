@@ -8,5 +8,6 @@
     ./tmux.nix
     ./firefox.nix
     ./chromium.nix
+    ./vscode.nix
   ];
 }

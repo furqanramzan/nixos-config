@@ -20,6 +20,8 @@
     # PHP
     pkgs.php81
     pkgs.php81Packages.composer
+    # Java
+    pkgs.jdk # The JDK includes JRE.
 
 
     # System Utilities
@@ -41,6 +43,7 @@
     pkgs.ranger # Console based file manager
 
     # Editor
+    pkgs.helix
     pkgs-unstable.neovim
     pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
   ];

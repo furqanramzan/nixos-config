@@ -26,7 +26,6 @@
     drawio
     insomnia
     postman
-    vscode
 
     vlc
     mpv
