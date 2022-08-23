@@ -11,5 +11,6 @@
     ./vscode.nix
     ./vlc
     ./fish.nix
+    ./fzf.nix
   ];
 }
