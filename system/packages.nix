@@ -2,21 +2,6 @@
 
 {
   environment.systemPackages = [
-    # Development
-    # C++
-    pkgs.gcc
-    pkgs.gnumake
-    # Python
-    pkgs.python310
-    pkgs.python310Packages.pip
-    # Rust
-    pkgs.rustup
-    pkgs.rustc
-    pkgs.cargo
-    # PHP
-    pkgs.php81
-    pkgs.php81Packages.composer
-
     # System Utilities
     pkgs.which
     pkgs.curl
@@ -36,7 +21,7 @@
     pkgs.ranger # Console based file manager
 
     # Editor
-    pkgs.helix
+    pkgs-unstable.helix
     pkgs-unstable.neovim
     pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
   ];

@@ -8,7 +8,12 @@
     ./mysql.nix
     ./sddm.nix
     ./plasma.nix
+    ./cpp.nix
     ./java.nix
+    ./rust.nix
     ./node.nix
+    ./python.nix
+    ./php.nix
+    ./lsp.nix
   ];
 }
