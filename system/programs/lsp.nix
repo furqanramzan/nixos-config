@@ -8,6 +8,10 @@
     gopls
     # Javascript, Typescript, JSX, TSX
     nodePackages.typescript-language-server
+    nodePackages.eslint_d
+    nodePackages.prettier_d_slim
+    nodePackages.eslint
+    nodePackages.prettier
     # HTML, CSS, JSON
     nodePackages.vscode-langservers-extracted
     # Lua

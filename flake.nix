@@ -40,6 +40,10 @@
 
       homeDirPrefix = if pkgs.stdenv.hostPlatform.isDarwin then "/Users" else "/home";
       homeDirectory = "${homeDirPrefix}/${username}";
+
+      home = (import ./home {
+        inherit homeDirectory pkgs pkgs-unstable stateVersion system username nix-colors plasma-manager;
+      });
     in
     {
       nixosConfigurations = {
@@ -47,7 +51,7 @@
           inherit system;
           specialArgs = { inherit username name email pkgs pkgs-unstable; };
           modules = [
-            ./system/default.nix
+            ./system
             home-manager.nixosModules.home-manager
             {
               # https://nix-community.github.io/home-manager/nixos-options.html
@@ -55,15 +59,18 @@
               home-manager.useUserPackages = true;
               # On activation move existing files by appending the given file extension rather than exiting with an error.
               home-manager.backupFileExtension = "backup";
-              home-manager.users.${username}.imports = [
-                plasma-manager.homeManagerModules.plasma-manager
-                (import ./home/default.nix {
-                  inherit homeDirectory pkgs stateVersion system username name email nix-colors;
-                })
-              ];
+              home-manager.users.${username} = home;
             }
           ];
         };
+      };
+
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        modules = [
+          home
+        ];
       };
     };
 }

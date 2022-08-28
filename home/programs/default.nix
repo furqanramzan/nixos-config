@@ -12,5 +12,6 @@
     ./vlc
     ./fish.nix
     ./fzf.nix
+    ./neovim
   ];
 }
