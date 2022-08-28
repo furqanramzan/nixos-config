@@ -14,6 +14,5 @@
     ./node.nix
     ./python.nix
     ./php.nix
-    ./lsp.nix
   ];
 }
