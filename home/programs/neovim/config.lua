@@ -1,6 +1,10 @@
 vim.opt.number = true
 
 -- Enable mouse
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
-vim.g.mapleader = ' '
+-- Set space as a leader.
+vim.g.mapleader = " "
+
+-- Enables 24-bit RGB color
+vim.opt.termguicolors = true

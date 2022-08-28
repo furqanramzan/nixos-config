@@ -2,16 +2,12 @@
 
 {
   home.packages = with pkgs; [
+    # Javascript, Typescript, JSX, TSX
+    nodePackages.typescript-language-server
     # Bash
     nodePackages.bash-language-server
     # Go
     gopls
-    # Javascript, Typescript, JSX, TSX
-    nodePackages.typescript-language-server
-    nodePackages.eslint_d
-    nodePackages.prettier_d_slim
-    nodePackages.eslint
-    nodePackages.prettier
     # HTML, CSS, JSON
     nodePackages.vscode-langservers-extracted
     # Lua
@@ -26,15 +22,16 @@
     rust-analyzer
     # Svelte
     nodePackages.svelte-language-server
-    # Toml
-    taplo-lsp
     # Vue
     nodePackages.vls
     # YAML
     nodePackages.yaml-language-server
+    # Docker
+    nodePackages.dockerfile-language-server-nodejs
   ];
 
   programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+    # https://github.com/neovim/nvim-lspconfig/
     {
       plugin = nvim-lspconfig;
       type = "lua";
@@ -79,31 +76,77 @@
         }
 
         local lspconfig = require "lspconfig"
-        local servers = { "tsserver" }
-
-        for _, lsp in ipairs(servers) do
-          lspconfig[lsp].setup {
-            on_attach = on_attach,
-            flags = lsp_flags,
-          }
-        end
-      '';
-    }
-
-    {
-      plugin = null-ls-nvim;
-      type = "lua";
-      config = ''
-        local nullls = require "null-ls"
-        local builtins = nullls.builtins
-
-        nullls.setup({
-            sources = {
-                builtins.code_actions.eslint_d,
-                builtins.diagnostics.eslint_d,
-                builtins.formatting.prettier_d_slim,
-            },
-        })
+        
+        -- typescript-language-server
+        lspconfig.tsserver.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- bash-language-server
+        lspconfig.bashls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- gopls
+        lspconfig.gopls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- vscode-langservers-extracted
+        lspconfig.html.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- vscode-langservers-extracted
+        lspconfig.jsonls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- vscode-langservers-extracted
+        lspconfig.cssls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- sumneko-lua-language-server
+        lspconfig.sumneko_lua.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- rnix-lsp
+        lspconfig.rnix.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- intelephense
+        lspconfig.intelephense.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- python-lsp-server
+        lspconfig.pylsp.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- rust-analyzer
+        lspconfig.rust_analyzer.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- svelte-language-server
+        lspconfig.svelte.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- yaml-language-server
+        lspconfig.yamlls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
+        -- dockerfile-language-server-nodejs
+        lspconfig.dockerls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+        }
       '';
     }
   ];
