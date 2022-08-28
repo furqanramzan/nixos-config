@@ -3,15 +3,15 @@
 , username
 , nix-colors
 , plasma-manager
-, pkgs-unstable
+, pkgs
 , ...
 }:
 
 {
   imports = [
+    ./programs
     nix-colors.homeManagerModule
     plasma-manager.homeManagerModules.plasma-manager
-    ./programs
     ./packages.nix
     ./activation.nix
   ];
@@ -23,18 +23,18 @@
   };
 
   programs.neovim.plugins = [
-    (pkgs-unstable.vimPlugins.nvim-treesitter.withPlugins (_: pkgs-unstable.tree-sitter.allGrammars))
+    (pkgs.unstable.vimPlugins.nvim-treesitter.withPlugins (_: pkgs.unstable.tree-sitter.allGrammars))
     {
-      plugin = pkgs-unstable.vimPlugins.lazygit-nvim;
+      plugin = pkgs.unstable.vimPlugins.lazygit-nvim;
       type = "lua";
       config = ''
         vim.keymap.set('n', '<leader>gg', ':LazyGit<cr>')
       '';
     }
 
-    pkgs-unstable.luajitPackages.plenary-nvim # Telescope dependency
+    pkgs.unstable.luajitPackages.plenary-nvim # Telescope dependency
     {
-      plugin = pkgs-unstable.vimPlugins.telescope-nvim;
+      plugin = pkgs.unstable.vimPlugins.telescope-nvim;
       type = "lua";
       config = ''
         vim.keymap.set('n', '<leader>ff', ':Telescope find_files<cr>')
@@ -46,7 +46,7 @@
       '';
     }
     {
-      plugin = pkgs-unstable.vimPlugins.telescope-file-browser-nvim;
+      plugin = pkgs.unstable.vimPlugins.telescope-file-browser-nvim;
       type = "lua";
       config = ''
         -- To get telescope-file-browser loaded and working with telescope,
@@ -57,14 +57,14 @@
     }
     # Cheat.sh dependency
     # {
-    #   plugin = pkgs-unstable.vimPlugins.sqlite-lua;
+    #   plugin = pkgs.unstable.vimPlugins.sqlite-lua;
     #   type = "lua";
     #   config = ''
-    #     vim.api.nvim_set_var('sqlite_clib_path', '${pkgs-unstable.sqlite.out}/lib/libsqlite3.so')
+    #     vim.api.nvim_set_var('sqlite_clib_path', '${pkgs.unstable.sqlite.out}/lib/libsqlite3.so')
     #   '';
     # }
     # {
-    #   plugin = pkgs-unstable.vimPlugins.telescope-cheat-nvim;
+    #   plugin = pkgs.unstable.vimPlugins.telescope-cheat-nvim;
     #   type = "lua";
     #   config = ''
     #     require("telescope").load_extension "cheat"
@@ -72,7 +72,7 @@
     # }
 
     {
-      plugin = pkgs-unstable.vimPlugins.lualine-nvim;
+      plugin = pkgs.unstable.vimPlugins.lualine-nvim;
       type = "lua";
       config = ''
         require('lualine').setup {}
@@ -80,7 +80,7 @@
     }
 
     {
-      plugin = pkgs-unstable.vimPlugins.nvim-lspconfig;
+      plugin = pkgs.unstable.vimPlugins.nvim-lspconfig;
       type = "lua";
       config = ''
         -- Mappings.
@@ -135,7 +135,7 @@
     }
 
     {
-      plugin = pkgs-unstable.vimPlugins.null-ls-nvim;
+      plugin = pkgs.unstable.vimPlugins.null-ls-nvim;
       type = "lua";
       config = ''
         local nullls = require "null-ls"

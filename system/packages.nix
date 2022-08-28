@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = [
@@ -21,8 +21,8 @@
     pkgs.ranger # Console based file manager
 
     # Editor
-    pkgs-unstable.helix
-    pkgs-unstable.neovim
+    pkgs.unstable.helix
+    pkgs.unstable.neovim
     pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
   ];
 }

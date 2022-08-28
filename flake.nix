@@ -24,32 +24,33 @@
       email = "furqanramzan271996@gmail.com"; # $EMAIL
       system = "x86_64-linux";  # x86_64-linux, aarch64-multiplatform, etc.
       stateVersion = "22.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
-
-      pkgs = import nixpkgs {
+      pkgs-common-config = {
         inherit system;
         config = {
           allowUnfree = true; # Allow proprietary software.
         };
       };
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
+      pkgs-config = pkgs-common-config // {
+        overlays = [
+          (self: super: {
+            unstable = import nixpkgs-unstable pkgs-common-config;
+          })
+        ];
       };
+      pkgs = import nixpkgs pkgs-config;
 
       homeDirPrefix = if pkgs.stdenv.hostPlatform.isDarwin then "/Users" else "/home";
       homeDirectory = "${homeDirPrefix}/${username}";
 
       home = (import ./home {
-        inherit homeDirectory pkgs pkgs-unstable stateVersion system username nix-colors plasma-manager;
+        inherit homeDirectory pkgs stateVersion system username nix-colors plasma-manager;
       });
     in
     {
       nixosConfigurations = {
         config = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit username name email pkgs pkgs-unstable; };
+          specialArgs = { inherit username name email pkgs; };
           modules = [
             ./system
             home-manager.nixosModules.home-manager
