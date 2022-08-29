@@ -87,9 +87,9 @@
                 }),
 
                 -- Trailing whitespace
-                builtins.diagnostics.trail_space.with({
-                  disabled_filetypes = { "mail" },
-                }),
+                -- builtins.diagnostics.trail_space.with({
+                --   disabled_filetypes = { "mail" },
+                -- }),
             },
         })
       '';
