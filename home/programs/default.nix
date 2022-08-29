@@ -13,5 +13,6 @@
     ./fish.nix
     ./fzf.nix
     ./neovim
+    ./xdg.nix
   ];
 }
