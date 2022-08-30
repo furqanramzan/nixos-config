@@ -183,6 +183,7 @@
     cmp-buffer
     # https://github.com/hrsh7th/cmp-path/
     cmp-path
+    lspkind-nvim
     # https://github.com/hrsh7th/nvim-cmp/
     {
       plugin = nvim-cmp;
@@ -231,6 +232,10 @@
             { name = 'luasnip' },
             { name = 'buffer' },
             { name = 'path' },
+          },
+          window = {
+            completion = cmp.config.window.bordered(),
+            documentation = cmp.config.window.bordered(),
           },
         }
       '';
