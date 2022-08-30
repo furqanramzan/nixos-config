@@ -36,6 +36,26 @@
       plugin = nvim-lspconfig;
       type = "lua";
       config = ''
+        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+        for type, icon in pairs(signs) do
+          local hl = "DiagnosticSign" .. type
+          vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+        end
+        vim.diagnostic.config({
+          signs = true,
+          underline = true,
+          -- With the default settings, you will not see updated diagnostics until you leave insert mode.
+          -- Set update_in_insert = true if you want diagnostics to update while in insert mode.
+          update_in_insert = false,
+          severity_sort = true,
+          virtual_text = {
+            -- source = "always",  -- Or "if_many"
+            prefix = '●', -- Could be '■', '▎', 'x'
+          },
+          float = {
+            source = "always",  -- Or "if_many"
+          },
+        })
         -- Mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         local opts = { noremap=true, silent=true }
