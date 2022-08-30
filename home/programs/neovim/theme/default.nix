@@ -9,6 +9,7 @@ in {
     {
       plugin = vimThemeFromScheme {scheme = config.colorscheme;};
       config = ''
+        syntax enable
         colorscheme nix-${config.colorscheme.slug}
       '';
     }

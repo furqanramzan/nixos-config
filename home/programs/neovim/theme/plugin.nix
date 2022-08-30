@@ -6,8 +6,6 @@ in
 pkgs.writeTextDir "colors/nix-${slug}.vim" /* vim */ ''
   let g:colors_name="nix-${slug}"
 
-  set termguicolors
-
   if exists("syntax_on")
     syntax reset
   endif
