@@ -14,5 +14,6 @@
     ./fzf.nix
     ./neovim
     ./xdg.nix
+    ./pnpm.nix
   ];
 }
