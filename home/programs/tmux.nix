@@ -8,7 +8,7 @@ in
     enable = true;
     baseIndex = 1; # Base index for windows and panes.
     keyMode = "vi"; # VI style shortcuts.
-    tmuxp.enable = true;
+    tmuxinator.enable = true;
     extraConfig = ''
       # COLOUR (base16)
 

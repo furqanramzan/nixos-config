@@ -1,5 +1,5 @@
 {
   imports = [
-    ./nixosconfig
+    ./nixosconfig.nix
   ];
 }
