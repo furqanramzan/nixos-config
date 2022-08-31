@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   fonts = {
     fonts = with pkgs; [
       # Fonts
@@ -11,7 +10,7 @@
       font-awesome # Icons
       corefonts # MS
       nafees # Urdu
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      (nerdfonts.override {fonts = ["FiraCode"];})
     ];
   };
 }

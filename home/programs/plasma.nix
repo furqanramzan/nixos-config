@@ -188,7 +188,6 @@
         "Containments.2.Applets.25.Configuration.Sensors".lowPrioritySensorIds = "[\"cpu/all/cpuCount\",\"cpu/all/coreCount\"]";
         "Containments.2.Applets.25.Configuration.Sensors".totalSensors = "[\"cpu/all/usage\"]";
 
-
         # Weather Applet
         "Containments.8.Applets.23".immutability = 1;
         "Containments.8.Applets.23".plugin = "org.kde.plasma.weather";

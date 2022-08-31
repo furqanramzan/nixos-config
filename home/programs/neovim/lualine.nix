@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
-
-let
-  inherit (config.colorscheme) colors;
-in
 {
+  config,
+  pkgs,
+  ...
+}: let
+  inherit (config.colorscheme) colors;
+in {
   programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
     # https://github.com/arkav/lualine-lsp-progress/
     lualine-lsp-progress

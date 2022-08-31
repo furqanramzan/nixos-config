@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
     # https://github.com/norcalli/nvim-colorizer.lua/
     {

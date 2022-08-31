@@ -17,61 +17,71 @@
     plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-colors, plasma-manager }:
-    let
-      username = "furqan"; # $USER
-      name = "Muhammad Furqan"; # $NAME
-      email = "furqanramzan271996@gmail.com"; # $EMAIL
-      system = "x86_64-linux";  # x86_64-linux, aarch64-multiplatform, etc.
-      stateVersion = "22.05";     # See https://nixos.org/manual/nixpkgs/stable for most recent
-      pkgs-common-config = {
-        inherit system;
-        config = {
-          allowUnfree = true; # Allow proprietary software.
-        };
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    nix-colors,
+    plasma-manager,
+  }: let
+    username = "furqan"; # $USER
+    name = "Muhammad Furqan"; # $NAME
+    email = "furqanramzan271996@gmail.com"; # $EMAIL
+    system = "x86_64-linux"; # x86_64-linux, aarch64-multiplatform, etc.
+    stateVersion = "22.05"; # See https://nixos.org/manual/nixpkgs/stable for most recent
+    pkgs-common-config = {
+      inherit system;
+      config = {
+        allowUnfree = true; # Allow proprietary software.
       };
-      pkgs-config = pkgs-common-config // {
+    };
+    pkgs-config =
+      pkgs-common-config
+      // {
         overlays = [
           (self: super: {
             unstable = import nixpkgs-unstable pkgs-common-config;
           })
         ];
       };
-      pkgs = import nixpkgs pkgs-config;
+    pkgs = import nixpkgs pkgs-config;
 
-      homeDirPrefix = if pkgs.stdenv.hostPlatform.isDarwin then "/Users" else "/home";
-      homeDirectory = "${homeDirPrefix}/${username}";
+    homeDirPrefix =
+      if pkgs.stdenv.hostPlatform.isDarwin
+      then "/Users"
+      else "/home";
+    homeDirectory = "${homeDirPrefix}/${username}";
 
-      home = (import ./home {
-        inherit homeDirectory pkgs stateVersion system username nix-colors plasma-manager;
-      });
-    in
-    {
-      nixosConfigurations = {
-        config = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit username name email pkgs; };
-          modules = [
-            ./system
-            home-manager.nixosModules.home-manager
-            {
-              # https://nix-community.github.io/home-manager/nixos-options.html
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              # On activation move existing files by appending the given file extension rather than exiting with an error.
-              home-manager.backupFileExtension = "backup";
-              home-manager.users.${username} = home;
-            }
-          ];
-        };
-      };
-
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-
+    home = import ./home {
+      inherit homeDirectory pkgs stateVersion system username nix-colors plasma-manager;
+    };
+  in {
+    nixosConfigurations = {
+      config = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {inherit username name email pkgs;};
         modules = [
-          home
+          ./system
+          home-manager.nixosModules.home-manager
+          {
+            # https://nix-community.github.io/home-manager/nixos-options.html
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # On activation move existing files by appending the given file extension rather than exiting with an error.
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.${username} = home;
+          }
         ];
       };
     };
+
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+
+      modules = [
+        home
+      ];
+    };
+  };
 }

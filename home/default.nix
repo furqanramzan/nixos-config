@@ -1,12 +1,11 @@
-{ homeDirectory
-, stateVersion
-, username
-, nix-colors
-, plasma-manager
-, ...
-}:
-
 {
+  homeDirectory,
+  stateVersion,
+  username,
+  nix-colors,
+  plasma-manager,
+  ...
+}: {
   imports = [
     nix-colors.homeManagerModule
     plasma-manager.homeManagerModules.plasma-manager
@@ -22,4 +21,3 @@
     inherit homeDirectory stateVersion username;
   };
 }
-

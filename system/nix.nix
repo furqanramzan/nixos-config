@@ -1,11 +1,13 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   nix = {
     # Nix Package Manager settings
     settings = {
       auto-optimise-store = true; # Optimise syslinks
-      experimental-features = [ "nix-command" "flakes" ]; # Emable flakes.
+      experimental-features = ["nix-command" "flakes"]; # Emable flakes.
     };
     gc = {
       # Automatic garbage collection

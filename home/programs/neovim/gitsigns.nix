@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim.plugins = with pkgs.unstable.luajitPackages; [
     # http://github.com/lewis6991/gitsigns.nvim
     {

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = [
     pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
   ];

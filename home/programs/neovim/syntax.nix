@@ -1,9 +1,4 @@
-{
-  pkgs,
-  ...
-}:
-
-{
+{pkgs, ...}: {
   programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/LnL7/vim-nix/
     vim-nix

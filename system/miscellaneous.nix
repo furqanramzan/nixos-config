@@ -42,12 +42,12 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   networking = {
-    hostName = "nixos"; # Define your hostname. 
+    hostName = "nixos"; # Define your hostname.
     # Pick only one of the below networking options.
     # Enables wireless support via wpa_supplicant.
     # wireless = {
     #   enable = true;
-    # } 
+    # }
     # Easiest to use and most distros use this by default.
     networkmanager = {
       enable = true;
@@ -67,7 +67,7 @@
   };
 
   environment = {
-    # Add ~/.local/bin/ to $PATH 
+    # Add ~/.local/bin/ to $PATH
     localBinInPath = true;
     variables = {
       TERMINAL = "kitty";

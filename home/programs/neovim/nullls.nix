@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # Bash
     shfmt
@@ -48,7 +46,7 @@
                 builtins.code_actions.eslint_d,
                 builtins.diagnostics.eslint_d,
                 builtins.formatting.prettier_d_slim,
-                
+
                 -- Markdown
                 builtins.formatting.markdownlint,
                 builtins.diagnostics.markdownlint,
@@ -56,7 +54,7 @@
                 -- SQL
                 builtins.diagnostics.sqlfluff,
                 builtins.formatting.sqlfluff,
-                
+
                 -- JSON
                 builtins.formatting.jq,
                 builtins.diagnostics.jsonlint,

@@ -1,9 +1,6 @@
-{ config, ... }:
-
-let
+{config, ...}: let
   inherit (config.colorscheme) colors;
-in
-{
+in {
   programs.tmux = {
     enable = true;
     baseIndex = 1; # Base index for windows and panes.

@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = [
     # https://github.com/jesseduffield/lazygit
     pkgs.lazygit

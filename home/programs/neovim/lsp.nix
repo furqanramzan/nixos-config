@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # Javascript, Typescript, JSX, TSX
     nodePackages.typescript-language-server
@@ -102,7 +100,7 @@
         capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
         local lspconfig = require "lspconfig"
-        
+
         -- typescript-language-server
         lspconfig.tsserver.setup {
           on_attach = on_attach,
@@ -189,7 +187,6 @@
         }
       '';
     }
-
 
     # Autocomplete
 

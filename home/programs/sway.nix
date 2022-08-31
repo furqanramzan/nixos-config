@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   wayland.windowManager.sway = {
     enable = true;
     systemdIntegration = true; # Enable sway-session.target to link to graphical-session.target for systemd
@@ -10,19 +8,49 @@
       terminal = "${pkgs.kitty}/bin/kitty";
       menu = "${pkgs.rofi}/bin/rofi -show drun";
       workspaceOutputAssign = [
-        {output = "eDP-1"; workspace = "1";}
-        {output = "HDMI-A-2"; workspace = "2";}
-        {output = "HDMI-A-2"; workspace = "3";}
-        {output = "HDMI-A-2"; workspace = "4";}
-        {output = "HDMI-A-2"; workspace = "5";}
-        {output = "HDMI-A-2"; workspace = "6";}
-        {output = "HDMI-A-2"; workspace = "7";}
-        {output = "HDMI-A-2"; workspace = "8";}
-        {output = "HDMI-A-2"; workspace = "9";}
+        {
+          output = "eDP-1";
+          workspace = "1";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "2";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "3";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "4";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "5";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "6";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "7";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "8";
+        }
+        {
+          output = "HDMI-A-2";
+          workspace = "9";
+        }
       ];
       startup = [
         # Run commands on Sway startup
-        { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } # Tiling Script
+        {
+          command = "${pkgs.autotiling}/bin/autotiling";
+          always = true;
+        } # Tiling Script
         ##{command = ''
         ##  ${pkgs.swayidle}/bin/swayidle -w \
         ##      before-sleep '${pkgs.swaylock-fancy}/bin/swaylock-fancy'
@@ -36,9 +64,11 @@
         #''; always = true;}                            # Auto lock\
       ];
 
-      bars = [{
-        command = "waybar";
-      }];
+      bars = [
+        {
+          command = "waybar";
+        }
+      ];
       colors.focused = {
         background = "#999999";
         border = "#999999";
@@ -96,7 +126,6 @@
         "${modifier}+Shift+7" = "move container to workspace number 7";
         "${modifier}+Shift+8" = "move container to workspace number 8";
         "${modifier}+Shift+9" = "move container to workspace number 9";
-
 
         "${modifier}+Alt+Up" = "resize shrink height 20px"; # Resize container
         "${modifier}+Alt+Down" = "resize grow height 20px";

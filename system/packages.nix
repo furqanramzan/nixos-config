@@ -1,12 +1,10 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     # System Utilities
     which
     curl
     wget
-    bat # Replacement of cat utility, with code formatting. 
+    bat # Replacement of cat utility, with code formatting.
     htop # Resource monitoring tool.
     btop # Replacement of htop.
     parted # Disk partitioning tool.

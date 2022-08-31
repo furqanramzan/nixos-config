@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   services = {
     xserver = {
       # Enable the X11 windowing system.
@@ -39,7 +37,7 @@
     # logind = {
     #   lidSwitch = "ignore"; # Laptop does not go to sleep when lid is closed
     # };
-    # # Enable the OpenSSH daemon. 
+    # # Enable the OpenSSH daemon.
     # openssh = {
     #   enable = true;
     # };

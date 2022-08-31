@@ -4,7 +4,7 @@
       enable = true;
       extensions = [
         # Adblock
-        { id = "gighmmpiobklfepjocnamgkkbiglidom"; }
+        {id = "gighmmpiobklfepjocnamgkkbiglidom";}
       ];
     };
   };
