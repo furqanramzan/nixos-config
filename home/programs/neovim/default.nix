@@ -5,6 +5,7 @@
     ./theme
     ./lsp.nix
     ./nullls.nix
+    ./syntax.nix
     ./telescope.nix
     ./treesitter.nix
     ./tree.nix
