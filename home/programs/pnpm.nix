@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = [pkgs.nodePackages.pnpm];
+  home.packages = [pkgs.unstable.nodePackages_latest.pnpm];
 
   home = {
     sessionPath = ["$HOME/.pnpm"];

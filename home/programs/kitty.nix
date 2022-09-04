@@ -9,7 +9,7 @@ in {
     enable = true;
     font = {
       name = "Ubuntu";
-      size = 12;
+      size = 18;
     };
     settings = {
       window_padding_width = 15;
