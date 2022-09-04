@@ -8,13 +8,13 @@ parted /dev/nvme0n1 -- set 1 boot on
 mkfs.fat -F32 -n boot /dev/nvme0n1p1
 mkswap -L swap /dev/nvme0n1p2
 mkfs.ext4 -L nixos /dev/nvme0n1p3
-mkfs.ext4 -L home /dev/nvme0n1p4
+mkfs.ext4 -L data /dev/nvme0n1p4
 
 umount /dev/disk/by-label/boot
-umount /dev/disk/by-label/home
+umount /dev/disk/by-label/data
 umount /dev/disk/by-label/nixos
 swapon /dev/disk/by-label/swap
 mount /dev/disk/by-label/nixos /mnt
-mkdir -p /mnt/{home,boot,boot/efi}
+mkdir -p /mnt/{data,boot,boot/efi}
 mount /dev/disk/by-label/boot /mnt/boot/efi
-mount /dev/disk/by-label/home /mnt/home
+mount /dev/disk/by-label/data /mnt/data

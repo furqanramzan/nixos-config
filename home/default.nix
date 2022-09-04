@@ -11,7 +11,7 @@
     plasma-manager.homeManagerModules.plasma-manager
     ./programs
     ./projects
-    ./packages.nix
+#     ./packages.nix
     ./activation.nix
   ];
 

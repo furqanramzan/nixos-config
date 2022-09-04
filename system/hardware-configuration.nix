@@ -26,8 +26,8 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-label/home";
+  fileSystems."/data" = {
+    device = "/dev/disk/by-label/data";
     fsType = "ext4";
   };
 
