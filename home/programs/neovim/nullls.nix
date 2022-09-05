@@ -1,15 +1,15 @@
 {pkgs, ...}: {
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     # Bash
     shfmt
     # Go
     gopls
     # Javascript, Typescript, JSX, TSX
-    nodePackages.eslint
-    nodePackages.eslint_d
+    nodePackages_latest.eslint
+    nodePackages_latest.eslint_d
     # HTML, CSS, JSON, Javascript, Typescript, JSX, TSX
-    nodePackages.prettier
-    nodePackages.prettier_d_slim
+    nodePackages_latest.prettier
+    nodePackages_latest.prettier_d_slim
     # Lua
     stylua
     luajitPackages.luacheck
@@ -20,19 +20,19 @@
     # Rust
     rustfmt
     # Markdown
-    nodePackages.markdownlint-cli
+    nodePackages_latest.markdownlint-cli
     # SQL
     sqlfluff
     # JSON
     jq
-    nodePackages.jsonlint
+    nodePackages_latest.jsonlint
     # Prose
     proselint
     # Editor Config
     editorconfig-checker
   ];
 
-  programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/jose-elias-alvarez/null-ls.nvim/
     {
       plugin = null-ls-nvim;

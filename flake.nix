@@ -2,8 +2,8 @@
   description = "Home Manager configuration";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-22.05";
 
     nix-colors.url = "github:misterio77/nix-colors";
 
@@ -20,7 +20,7 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-unstable,
+    nixpkgs-stable,
     home-manager,
     nix-colors,
     plasma-manager,
@@ -36,15 +36,13 @@
         allowUnfree = true; # Allow proprietary software.
       };
     };
-    pkgs-config =
-      pkgs-common-config
-      // {
-        overlays = [
-          (self: super: {
-            unstable = import nixpkgs-unstable pkgs-common-config;
-          })
-        ];
-      };
+    pkgs-config = pkgs-common-config // {
+      overlays = [
+        (self: super: {
+          stable = import nixpkgs-stable pkgs-common-config;
+        })
+      ];
+    };
     pkgs = import nixpkgs pkgs-config;
 
     homeDirPrefix =

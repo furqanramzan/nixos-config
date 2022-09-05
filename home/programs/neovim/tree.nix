@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/kyazdani42/nvim-tree.lua/
     {
       plugin = nvim-tree-lua;

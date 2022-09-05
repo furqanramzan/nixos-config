@@ -18,6 +18,6 @@
     ranger # Console based file manager
 
     # Editor
-    unstable.helix
+    helix
   ];
 }

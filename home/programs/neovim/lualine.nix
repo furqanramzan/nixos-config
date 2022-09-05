@@ -5,7 +5,7 @@
 }: let
   inherit (config.colorscheme) colors;
 in {
-  programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/arkav/lualine-lsp-progress/
     lualine-lsp-progress
     # https://github.com/nvim-lualine/lualine.nvim

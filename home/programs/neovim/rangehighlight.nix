@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/winston0410/range-highlight.nvim/
     {
       plugin = range-highlight-nvim;

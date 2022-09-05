@@ -21,7 +21,7 @@
 
   programs.neovim = {
     enable = true;
-    plugins = with pkgs.unstable.vimPlugins; [
+    plugins = with pkgs.vimPlugins; [
       # https://github.com/editorconfig/editorconfig-vim/
       editorconfig-vim
       # https://github.com/tpope/vim-fugitive/

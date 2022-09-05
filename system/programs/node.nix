@@ -1,10 +1,19 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs.unstable; [
+  environment.systemPackages = with pkgs; [
     nodejs
-    nodePackages.pnpm
-    nodePackages.yarn
-    nodePackages.pm2
-    nodePackages.vue-cli
-    nodePackages.typescript
+    nodePackages_latest.pnpm
+    nodePackages_latest.yarn
+    nodePackages_latest.pm2
+    nodePackages_latest.vue-cli
+    nodePackages_latest.typescript
   ];
+
+  programs.npm = {
+    enable = true;
+    package = pkgs.nodePackages_latest.npm;
+    npmrc = ''
+      prefix=$HOME/.npm
+      color=true
+    '';
+  };
 }

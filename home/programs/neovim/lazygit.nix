@@ -4,7 +4,7 @@
     pkgs.lazygit
   ];
 
-  programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/kdheepak/lazygit.nvim/
     {
       plugin = lazygit-nvim;

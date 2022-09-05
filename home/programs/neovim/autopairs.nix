@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  programs.neovim.plugins = with pkgs.unstable.vimPlugins; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # https://github.com/windwp/nvim-autopairs/
     {
       plugin = nvim-autopairs;

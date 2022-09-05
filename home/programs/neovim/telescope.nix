@@ -3,9 +3,9 @@
     pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
   ];
 
-  programs.neovim.plugins = with pkgs.unstable; [
+  programs.neovim.plugins = with pkgs; [
     # http://github.com/nvim-lua/plenary.nvim
-    luajitPackages.plenary-nvim # Telescope dependency
+    # luajitPackages.plenary-nvim # Telescope dependency
     # https://github.com/nvim-telescope/telescope.nvim/
     {
       plugin = vimPlugins.telescope-nvim;
