@@ -18,7 +18,8 @@
         end
       '';
     };
-    shellAbbrs = { 
+    shellAbbrs = {
+      p = "cd $XDG_PROJECTS_DIR";
       tms = "tmuxinator start";
     };
   };

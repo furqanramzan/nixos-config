@@ -59,6 +59,7 @@ in {
           install pnpm
           database $database_name "create"
           cd $code_dir
+          git config --local user.email "muhammad.furqan@cooperativecomputing.com"
           cp .env.example .env
           cd -
         }
@@ -77,6 +78,9 @@ in {
         initialize() {
           clone $repository_url
           install pnpm
+          cd $code_dir
+          git config --local user.email "muhammad.furqan@cooperativecomputing.com"
+          cd -
         }
 
         ${builtins.readFile ../project.sh}

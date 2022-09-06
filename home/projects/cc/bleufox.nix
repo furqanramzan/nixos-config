@@ -36,6 +36,7 @@ in {
         install pnpm
         database $database_name "create"
         cd $code_dir
+        git config --local user.email "muhammad.furqan@cooperativecomputing.com"
         cp .env.example .env
         pnpm migrate
         pnpm seed

@@ -48,7 +48,7 @@ create_database() {
 }
 delete_database() {
     info "Deleting database '$database'"
-    if mysql --user="$user" --password="$password" --execute="DELETE DATABASE $database;" &>>$output; then
+    if mysql --user="$user" --password="$password" --execute="DROP DATABASE $database;" &>>$output; then
         success "Done deleting database '$database'"
     else
         error "Error while deleting database '$database'. Look ${output} for more detail."
