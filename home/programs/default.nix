@@ -5,6 +5,7 @@
     ./homemanager.nix
     ./plasma.nix
     ./kitty.nix
+    ./alacritty.nix
     ./tmux.nix
     ./firefox.nix
     ./chromium.nix
