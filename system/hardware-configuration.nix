@@ -5,6 +5,7 @@
   config,
   lib,
   modulesPath,
+  homeDirectory,
   ...
 }: {
   imports = [
@@ -26,7 +27,7 @@
     fsType = "vfat";
   };
 
-  fileSystems."/data" = {
+  fileSystems."${homeDirectory}/data" = {
     device = "/dev/disk/by-label/data";
     fsType = "ext4";
   };

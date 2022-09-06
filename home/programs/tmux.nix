@@ -1,12 +1,18 @@
 {config, ...}: let
   inherit (config.colorscheme) colors;
+  inherit (config.xdg) configHome;
 in {
   programs.tmux = {
     enable = true;
     baseIndex = 1; # Base index for windows and panes.
     keyMode = "vi"; # VI style shortcuts.
+    # Automatically spawn a session if trying to attach and none are running.
+    newSession = true;
     tmuxinator.enable = true;
     extraConfig = ''
+      # Enable mouse
+      setw -g mouse on
+      
       # COLOUR (base16)
 
       # default statusbar colors
@@ -38,5 +44,18 @@ in {
       # bell
       set-window-option -g window-status-bell-style "fg=#${colors.base01},bg=#${colors.base08}"
     '';
+  };
+  xdg.configFile = {
+    "tmuxinator/main.yml" = {
+      text = ''
+        # ${configHome}/tmuxinator/main.yml
+
+        name: main
+        root: ~
+
+        windows:
+          - command:
+      '';
+    };
   };
 }

@@ -18,5 +18,8 @@
         end
       '';
     };
+    shellAbbrs = { 
+      tms = "tmuxinator start";
+    };
   };
 }

@@ -1,9 +1,9 @@
 {config, ...}: let
   project = {
-    name = "nixosconfig";
-    shortName = "noc";
+    name = "bleufox";
+    shortName = "bfx";
     codeDir = "code";
-    repository_url = "git@gitlab.com:furqanpersonal/nixos-config.git";
+    repository_url = "git@bitbucket.org:cooperativecomputing/bleu-fox.git";
   };
   inherit (config.xdg) configHome;
   inherit (config.home) homeDirectory;
@@ -20,23 +20,29 @@ in {
 
         windows:
           - editor: $EDITOR .
-          - server: nixos-rebuild build --flake .#config
+          - server: pnpm dev
+          - command:
       '';
     };
   };
-  home.file."data/projects/${project.name}/boostrap.sh" = {
+  home.file."data/projects/${project.name}/bootstrap.sh" = {
     text = ''
-      ${builtins.readFile ./common.sh}
+      ${builtins.readFile ../common.sh}
 
       repository_url="${project.repository_url}"
+      database_name="${project.name}"
       initialize() {
         clone $repository_url
+        install pnpm
+        database $database_name "create"
         cd $code_dir
-        nixos-rebuild build --flake .#config
+        cp .env.example .env
+        pnpm migrate
+        pnpm seed
         cd -
       }
 
-      ${builtins.readFile ./project.sh}
+      ${builtins.readFile ../project.sh}
     '';
     executable = true;
   };

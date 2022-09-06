@@ -1,6 +1,6 @@
 {
   imports = [
     ./nixosconfig.nix
-    ./bleufox.nix
+    ./cc
   ];
 }

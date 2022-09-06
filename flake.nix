@@ -58,7 +58,7 @@
     nixosConfigurations = {
       config = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit username name email pkgs;};
+        specialArgs = {inherit username name email pkgs homeDirectory;};
         modules = [
           ./system
           home-manager.nixosModules.home-manager
