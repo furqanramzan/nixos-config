@@ -5,11 +5,11 @@
     # Go
     gopls
     # Javascript, Typescript, JSX, TSX
-    nodePackages_latest.eslint
-    nodePackages_latest.eslint_d
+    nodePackages.eslint
+    nodePackages.eslint_d
     # HTML, CSS, JSON, Javascript, Typescript, JSX, TSX
-    nodePackages_latest.prettier
-    nodePackages_latest.prettier_d_slim
+    nodePackages.prettier
+    nodePackages.prettier_d_slim
     # Lua
     stylua
     luajitPackages.luacheck
@@ -20,12 +20,12 @@
     # Rust
     rustfmt
     # Markdown
-    nodePackages_latest.markdownlint-cli
+    nodePackages.markdownlint-cli
     # SQL
     sqlfluff
     # JSON
     jq
-    nodePackages_latest.jsonlint
+    nodePackages.jsonlint
     # Prose
     proselint
     # Editor Config

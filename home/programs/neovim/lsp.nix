@@ -1,31 +1,31 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # Javascript, Typescript, JSX, TSX
-    nodePackages_latest.typescript-language-server
+    nodePackages.typescript-language-server
     # Bash
-    nodePackages_latest.bash-language-server
+    nodePackages.bash-language-server
     # Go
     gopls
     # HTML, CSS, JSON
-    nodePackages_latest.vscode-langservers-extracted
+    nodePackages.vscode-langservers-extracted
     # Lua
     sumneko-lua-language-server
     # Nix
     rnix-lsp
     # PHP
-    nodePackages_latest.intelephense
+    nodePackages.intelephense
     # Python
     python310Packages.python-lsp-server
     # Rust
     rust-analyzer
     # Svelte
-    nodePackages_latest.svelte-language-server
+    nodePackages.svelte-language-server
     # Vue
-    nodePackages_latest.vls
+    nodePackages.vls
     # YAML
-    nodePackages_latest.yaml-language-server
+    nodePackages.yaml-language-server
     # Docker
-    nodePackages_latest.dockerfile-language-server-nodejs
+    nodePackages.dockerfile-language-server-nodejs
   ];
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
