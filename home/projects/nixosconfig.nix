@@ -24,7 +24,7 @@ in {
       '';
     };
   };
-  home.file."data/projects/${project.name}/boostrap.sh" = {
+  home.file."data/projects/${project.name}/bootstrap.sh" = {
     text = ''
       ${builtins.readFile ./common.sh}
 
