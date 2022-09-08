@@ -36,13 +36,15 @@
         allowUnfree = true; # Allow proprietary software.
       };
     };
-    pkgs-config = pkgs-common-config // {
-      overlays = [
-        (self: super: {
-          stable = import nixpkgs-stable pkgs-common-config;
-        })
-      ];
-    };
+    pkgs-config =
+      pkgs-common-config
+      // {
+        overlays = [
+          (self: super: {
+            stable = import nixpkgs-stable pkgs-common-config;
+          })
+        ];
+      };
     pkgs = import nixpkgs pkgs-config;
 
     homeDirPrefix =

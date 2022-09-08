@@ -12,7 +12,7 @@ in {
     extraConfig = ''
       # Enable mouse
       setw -g mouse on
-      
+
       # COLOUR (base16)
 
       # default statusbar colors

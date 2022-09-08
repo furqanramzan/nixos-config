@@ -4,8 +4,8 @@
 in
   pkgs.writeTextDir "colors/nix-${slug}.vim"
   /*
-   vim
-   */
+  vim
+  */
   ''
     let g:colors_name="nix-${slug}"
 

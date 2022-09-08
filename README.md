@@ -11,3 +11,6 @@ nixos-generate-config --root .
 
 ## Install NixOS
 sudo nixos-install --flake .#config
+
+# Format whole project
+alejandra .

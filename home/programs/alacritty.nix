@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   inherit (config.colorscheme) colors;
 in {
   programs.alacritty = {
@@ -10,7 +6,7 @@ in {
     settings = {
       font = {
         family = "Ubuntu";
-        size = 6;
+        size = 12;
       };
       colors = {
         primary = {
