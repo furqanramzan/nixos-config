@@ -4,7 +4,7 @@
 {username, ...}: {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./filesystem.nix
     ./programs
     ./packages.nix
     ./services.nix

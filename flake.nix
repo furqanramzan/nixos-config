@@ -56,11 +56,11 @@
     };
   in {
     nixosConfigurations = {
-      config = nixpkgs.lib.nixosSystem {
+      cc = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit username name email pkgs homeDirectory;};
         modules = [
-          ./system
+          ./system/cc.nix
           home-manager.nixosModules.home-manager
           {
             # https://nix-community.github.io/home-manager/nixos-options.html
