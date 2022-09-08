@@ -40,6 +40,8 @@ in {
         cp .env.example .env
         pnpm migrate
         pnpm seed
+        pnpm storage:link
+        git config core.hooksPath .githooks
         cd -
       }
 
