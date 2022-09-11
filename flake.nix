@@ -58,6 +58,25 @@
     };
   in {
     nixosConfigurations = {
+      pc = nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {inherit username name email pkgs homeDirectory;};
+        modules = [
+          ./system/pc.nix
+          home-manager.nixosModules.home-manager
+          {
+            # https://nix-community.github.io/home-manager/nixos-options.html
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # On activation move existing files by appending the given file extension rather than exiting with an error.
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.${username} = home;
+          }
+        ];
+      };
+    };
+
+    nixosConfigurations = {
       cc = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit username name email pkgs homeDirectory;};
