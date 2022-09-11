@@ -2,7 +2,7 @@
   environment.systemPackages = with pkgs; [
     nodejs
     nodePackages_latest.pnpm
-    nodePackages_latest.yarn
+    yarn
     nodePackages.pm2
     nodePackages.vue-cli
     nodePackages.typescript
