@@ -33,14 +33,14 @@ in {
       database_name="${project.name}"
       initialize() {
         clone $repository_url
-        install pnpm
+        install yarn
         database $database_name "create"
         cd $code_dir
         git config --local user.email "muhammad.furqan@cooperativecomputing.com"
         cp .env.example .env
-        pnpm migrate
-        pnpm seed
-        pnpm storage:link
+        npm run migrate
+        npm run seed
+        npm run storage:link
         git config core.hooksPath .githooks
         cd -
       }

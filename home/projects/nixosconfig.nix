@@ -21,6 +21,7 @@ in {
         windows:
           - editor: $EDITOR .
           - server: nixos-rebuild build --flake .#config
+          - command:
       '';
     };
   };

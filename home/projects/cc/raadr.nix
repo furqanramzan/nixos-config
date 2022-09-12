@@ -56,7 +56,7 @@ in {
 
         initialize() {
           clone $repository_url
-          install pnpm
+          install yarn
           database $database_name "create"
           cd $code_dir
           git config --local user.email "muhammad.furqan@cooperativecomputing.com"
@@ -77,7 +77,7 @@ in {
 
         initialize() {
           clone $repository_url
-          install pnpm
+          install yarn
           cd $code_dir
           git config --local user.email "muhammad.furqan@cooperativecomputing.com"
           cd -
