@@ -24,6 +24,7 @@
     drawio
     insomnia
     postman
+    sublime-merge
 
     mpv
     pavucontrol # Audio Control
