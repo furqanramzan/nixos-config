@@ -19,6 +19,8 @@
       documents = "$HOME/data/documents";
       extraConfig = {
         XDG_MISC_DIR = "$HOME/data/misc";
+        XDG_NAATS_DIR = "$HOME/data/naats";
+        XDG_SONGS_DIR = "$HOME/data/songs";
         XDG_PROJECTS_DIR = "$HOME/data/projects";
       };
     };
