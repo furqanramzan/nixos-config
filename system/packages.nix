@@ -9,6 +9,7 @@
     btop # Replacement of htop.
     parted # Disk partitioning tool.
     killall
+    ngrok # Exposes a web server running on local machine to the internet.
     # pciutils # The PCI Utilities.
     # usbutils # The USB Utilities.
     pfetch # Minimal Fetch
