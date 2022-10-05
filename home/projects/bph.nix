@@ -32,6 +32,9 @@ in {
       repository_url="${project.repository_url}"
       initialize() {
         clone $repository_url
+        cd $code_dir
+        install pnpm
+        cd -
       }
 
       ${builtins.readFile ./project.sh}
