@@ -7,8 +7,8 @@
     # Packages from nodePackages_latest don't result in executables in $PATH
     # Temporary fix
     file = {
-      ".pnpm/pnpm".source = "${pkgs.nodePackages_latest.pnpm}/lib/node_modules/pnpm/bin/pnpm.cjs";
-      ".pnpm/pnpx".source = "${pkgs.nodePackages_latest.pnpm}/lib/node_modules/pnpm/bin/pnpx.cjs";
+      ".local/bin/pnpm".source = "${pkgs.nodePackages_latest.pnpm}/lib/node_modules/pnpm/bin/pnpm.cjs";
+      ".local/bin/pnpx".source = "${pkgs.nodePackages_latest.pnpm}/lib/node_modules/pnpm/bin/pnpx.cjs";
     };
   };
 }
