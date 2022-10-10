@@ -12,9 +12,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    plasma-manager.url = "github:pjones/plasma-manager";
-    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
-    plasma-manager.inputs.home-manager.follows = "home-manager";
+    plasma-manager = {
+      url = "github:pjones/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
+    android-nixpkgs = {
+      url = "github:tadfisher/android-nixpkgs/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -24,6 +31,7 @@
     home-manager,
     nix-colors,
     plasma-manager,
+    android-nixpkgs,
   }: let
     username = "furqan"; # $USER
     name = "Muhammad Furqan"; # $NAME
@@ -40,9 +48,7 @@
       pkgs-common-config
       // {
         overlays = [
-          (self: super: {
-            stable = import nixpkgs-stable pkgs-common-config;
-          })
+          android-nixpkgs.overlays.default
         ];
       };
     pkgs = import nixpkgs pkgs-config;
@@ -54,7 +60,7 @@
     homeDirectory = "${homeDirPrefix}/${username}";
 
     home = import ./home {
-      inherit homeDirectory pkgs stateVersion system username nix-colors plasma-manager;
+      inherit homeDirectory pkgs stateVersion system username nix-colors plasma-manager android-nixpkgs;
     };
   in {
     nixosConfigurations = {

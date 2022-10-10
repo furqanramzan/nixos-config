@@ -4,6 +4,7 @@
     # ./waybar.nix
     ./homemanager.nix
     ./plasma.nix
+    ./android.nix
     ./kitty.nix
     ./alacritty.nix
     ./tmux.nix
