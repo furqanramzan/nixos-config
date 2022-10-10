@@ -25,6 +25,7 @@
     insomnia
     postman
     sublime-merge
+    dbeaver
 
     mpv
     pavucontrol # Audio Control
