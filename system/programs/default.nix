@@ -14,6 +14,6 @@
     ./node.nix
     ./python.nix
     ./php.nix
-    ./android.nix
+    # ./android.nix
   ];
 }
