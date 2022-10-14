@@ -17,8 +17,5 @@
     unrar # Decompress zip files.
     tmux
     ranger # Console based file manager
-
-    # Editor
-    helix
   ];
 }

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./docker.nix
     ./git.nix
     ./neovim.nix
     ./gnupg.nix
