@@ -16,6 +16,7 @@
     unzip # Decompress zip files.
     unrar # Decompress zip files.
     tmux
-    ranger # Console based file manager
+    ranger # Console based file manager.
+    openssl # A cryptographic library that implements the SSL and TLS protocols.
   ];
 }
