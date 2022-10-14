@@ -18,7 +18,7 @@
     handbrake
 
     easytag
-    audacity-gtk3
+    audacity
 
     sqlitebrowser
     drawio
