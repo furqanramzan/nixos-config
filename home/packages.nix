@@ -1,21 +1,21 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     google-chrome
-    vivaldi
-    opera
+    # vivaldi
+    # opera
     transmission-qt
 
-    anydesk
-    teamviewer
+    # anydesk
+    # teamviewer
 
     libreoffice
-    calibre
+    # calibre
 
-    blender
+    # blender
     gimp
-    kdenlive
-    inkscape
-    handbrake
+    # kdenlive
+    # inkscape
+    # handbrake
 
     easytag
     audacity
@@ -27,11 +27,11 @@
     sublime-merge
     dbeaver
 
-    mpv
-    pavucontrol # Audio Control
+    # mpv
+    # pavucontrol # Audio Control
     cmus # Command line audio player
 
-    slack
-    skypeforlinux
+    # slack
+    # skypeforlinux
   ];
 }
