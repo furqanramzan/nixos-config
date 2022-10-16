@@ -66,7 +66,7 @@
         -- after the language server attaches to the current buffer
         local on_attach = function(client, bufnr)
           -- Disable formatting, use null ls
-          client.resolved_capabilities.document_formatting = false
+          client.server_capabilities.documentFormattingProvider = false
           -- Enable completion triggered by <c-x><c-o>
           vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 

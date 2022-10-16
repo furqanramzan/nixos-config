@@ -45,7 +45,7 @@
             sources = {
                 builtins.code_actions.eslint_d,
                 builtins.diagnostics.eslint_d,
-                builtins.formatting.prettier_d_slim,
+                builtins.formatting.eslint_d,
 
                 -- Markdown
                 builtins.formatting.markdownlint,
