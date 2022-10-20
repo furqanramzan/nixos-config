@@ -17,6 +17,7 @@
     ./gitsigns.nix
     ./colorizer.nix
     ./barbar.nix
+    ./comment.nix
   ];
 
   programs.neovim = {

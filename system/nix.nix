@@ -1,8 +1,4 @@
 {
-  pkgs,
-  inputs,
-  ...
-}: {
   nix = {
     # Nix Package Manager settings
     settings = {

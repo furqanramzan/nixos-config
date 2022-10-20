@@ -45,5 +45,12 @@
     #     require("telescope").load_extension "cheat"
     #   '';
     # }
+    {
+      plugin = vimPlugins.telescope-fzf-native-nvim;
+      type = "lua";
+      config = ''
+        require("telescope").load_extension('fzf')
+      '';
+    }
   ];
 }
