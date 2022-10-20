@@ -17,7 +17,7 @@
     ./activation.nix
   ];
 
-  colorScheme = nix-colors.colorSchemes.dracula;
+  colorScheme = nix-colors.colorSchemes.onedark;
 
   home = {
     inherit homeDirectory stateVersion username;
