@@ -6,7 +6,7 @@ in {
     settings = {
       font = {
         family = "Ubuntu";
-        size = 12;
+        size = 16;
       };
       colors = {
         primary = {

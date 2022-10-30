@@ -141,84 +141,12 @@
           ShowSystemTrayIcon = true;
         };
       };
+    };
+  };
 
-      # Bottom Panel
-      "plasma-org.kde.plasma.desktop-appletsrc" = {
-        # Remove show desktop applet
-        "Containments.2.Applets.18".immutability = null;
-        "Containments.2.Applets.18".plugin = null;
-        "Containments.2.Applets.18.Configuration".PreloadWeight = null;
-
-        # Digital Clock
-        "Containments.2.Applets.17".immutability = 1;
-        "Containments.2.Applets.17".plugin = "org.kde.plasma.digitalclock";
-        # "Containments.2.Applets.17.Configuration".PreloadWeight = 54;
-        "Containments.2.Applets.17.Configuration.Appearance".dateFormat = "longDate";
-        "Containments.2.Applets.17.Configuration.Appearance".showSeconds = true;
-        # "Containments.2.Applets.17.Configuration.ConfigDialog".DialogHeight = 540;
-        # "Containments.2.Applets.17.Configuration.ConfigDialog".DialogWidth = 720;
-
-        # Task Manager
-        "Containments.2.Applets.5".immutability = 1;
-        "Containments.2.Applets.5".plugin = "org.kde.plasma.taskmanager";
-        "Containments.2.Applets.5.Configuration.General".groupingStrategy = 0;
-        "Containments.2.Applets.5.Configuration.General".maxStripes = 1;
-        "Containments.2.Applets.5.Configuration.General".showToolTips = false;
-        "Containments.2.Applets.5.Configuration.General".launchers = "applications:org.kde.dolphin.desktop,applications:google-chrome.desktop,applications:code.desktop";
-        "Containments.2.Applets.5.Configuration.ConfigDialog".DialogHeight = 540;
-        "Containments.2.Applets.5.Configuration.ConfigDialog".DialogWidth = 720;
-
-        # System Monitor: Memory Usage
-        "Containments.2.Applets.20".immutability = 1;
-        "Containments.2.Applets.20".plugin = "org.kde.plasma.systemmonitor";
-        "Containments.2.Applets.20.Configuration.Appearance".chartFace = "org.kde.ksysguard.piechart";
-        "Containments.2.Applets.20.Configuration.Appearance".title = "Memory Usage";
-        "Containments.2.Applets.20.Configuration.SensorColors"."memory/physical/used" = "61,174,233";
-        "Containments.2.Applets.20.Configuration.Sensors".highPrioritySensorIds = "[\"memory/physical/used\"]";
-        "Containments.2.Applets.20.Configuration.Sensors".lowPrioritySensorIds = "[\"memory/physical/total\"]";
-        "Containments.2.Applets.20.Configuration.Sensors".totalSensors = "[\"memory/physical/usedPercent\"]";
-
-        # System Monitor: CPU Usage
-        "Containments.2.Applets.25".immutability = 1;
-        "Containments.2.Applets.25".plugin = "org.kde.plasma.systemmonitor";
-        "Containments.2.Applets.25.Configuration.Appearance".chartFace = "org.kde.ksysguard.piechart";
-        "Containments.2.Applets.25.Configuration.Appearance".title = "Total CPU Use";
-        "Containments.2.Applets.25.Configuration.SensorColors"."cpu/all/usage" = "61,174,233";
-        "Containments.2.Applets.25.Configuration.Sensors".highPrioritySensorIds = "[\"cpu/all/usage\"]";
-        "Containments.2.Applets.25.Configuration.Sensors".lowPrioritySensorIds = "[\"cpu/all/cpuCount\",\"cpu/all/coreCount\"]";
-        "Containments.2.Applets.25.Configuration.Sensors".totalSensors = "[\"cpu/all/usage\"]";
-
-        # Weather Applet
-        "Containments.8.Applets.23".immutability = 1;
-        "Containments.8.Applets.23".plugin = "org.kde.plasma.weather";
-        # Weather Report Source
-        "Containments.8.Applets.23.Configuration".source = "bbcukmet|weather|Karachi, Pakistan, PK|1174872";
-        # Update report after specified n of seconds.
-        "Containments.8.Applets.23.Configuration".updateInterval = 30;
-        # Tooltip Information
-        "Containments.8.Applets.23.Configuration".showHumidityInTooltip = false;
-        "Containments.8.Applets.23.Configuration".showPressureInTooltip = false;
-        "Containments.8.Applets.23.Configuration".showTemperatureInCompactMode = false;
-        "Containments.8.Applets.23.Configuration".showTemperatureInTooltip = true;
-        "Containments.8.Applets.23.Configuration".showWindInTooltip = false;
-        # Measurement Units
-        "Containments.8.Applets.23.Configuration".pressureUnit = 5028;
-        "Containments.8.Applets.23.Configuration".speedUnit = 9002;
-        "Containments.8.Applets.23.Configuration".temperatureUnit = 6001;
-        "Containments.8.Applets.23.Configuration".visibilityUnit = 2024;
-        # "Containments.8.Applets.23.Configuration.ConfigDialog".DialogHeight = 540;
-        # "Containments.8.Applets.23.Configuration.ConfigDialog".DialogWidth = 720;
-
-        # Show battery percentage.
-        "Containments.8.Applets.19.Configuration.General".showPercentage = true;
-
-        # System Tray Entries
-        "Containments.8.General.".shownItems = "org.kde.plasma.weather";
-        "Containments.8.General.".hiddenItems = "org.kde.plasma.nightcolorcontrol";
-
-        # Applets order.
-        "Containments.2.General".AppletOrder = "3;5;6;7;17;20;25";
-      };
+  home.file = {
+    ".config/plasma-org.kde.plasma.desktop-appletsrc" = {
+      source = ./desktop-appletsrc;
     };
   };
 }

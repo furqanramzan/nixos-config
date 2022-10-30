@@ -1,9 +1,7 @@
 {
   imports = [
-    # ./sway.nix
-    # ./waybar.nix
     ./homemanager.nix
-    ./plasma.nix
+    ./plasma/default.nix
     # ./android.nix
     ./kitty.nix
     ./alacritty.nix
