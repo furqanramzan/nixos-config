@@ -1,5 +1,6 @@
 {
   imports = [
+    ./sway.nix
     ./docker.nix
     ./git.nix
     ./neovim.nix

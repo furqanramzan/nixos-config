@@ -5,7 +5,7 @@
     config = rec {
       # Sway configuration
       modifier = "Mod4";
-      terminal = "${pkgs.kitty}/bin/kitty";
+      terminal = "${pkgs.alacritty}/bin/alacritty";
       menu = "${pkgs.rofi}/bin/rofi -show drun";
       workspaceOutputAssign = [
         {

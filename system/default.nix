@@ -17,7 +17,6 @@
     ./nix.nix
     ./miscellaneous.nix
     ./hardware
-    # ./sway.nix
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

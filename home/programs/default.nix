@@ -1,5 +1,7 @@
 {
   imports = [
+    ./sway.nix
+    ./waybar.nix
     ./homemanager.nix
     ./plasma/default.nix
     # ./android.nix

@@ -71,13 +71,6 @@
     keyMap = "us"; # or us/azerty/etc
   };
 
-  hardware = {
-    # Brightness control via xbacklight from users in the video group.
-    # acpilight = {
-    #   enable = true;
-    # };
-  };
-
   environment = {
     # Add ~/.local/bin/ to $PATH
     localBinInPath = true;

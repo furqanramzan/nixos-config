@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -26,8 +21,7 @@
       dracula-theme # gtk theme
       swaylock # lock screen
       swayidle # idle management daemon
-      grim # screenshot functionality
-      slurp # screenshot functionality
+      flameshot # screenshot functionality
       wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
       wf-recorder # video capture tool
       bemenu # wayland clone of dmenu
