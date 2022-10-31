@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  imports = [
+    ./waybar.nix
+    ./lock.nix
+  ];
+
   wayland.windowManager.sway = {
     enable = true;
     systemdIntegration = true; # Enable sway-session.target to link to graphical-session.target for systemd
