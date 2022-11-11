@@ -1,22 +1,21 @@
 {pkgs, ...}: {
   imports = [
     ./theme
+    ./whichkey.nix
     ./lsp.nix
     ./nullls.nix
     ./syntax.nix
     ./telescope.nix
     ./treesitter.nix
-    ./tree.nix
     ./lazygit.nix
     ./lualine.nix
     ./autopairs.nix
     ./undotree.nix
-    ./whichkey.nix
     ./rangehighlight.nix
     ./blankline.nix
     ./gitsigns.nix
     ./colorizer.nix
-    ./barbar.nix
+    ./tree-buffer.nix
     ./comment.nix
   ];
 

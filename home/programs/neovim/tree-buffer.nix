@@ -24,9 +24,6 @@
         local map = vim.api.nvim_set_keymap
         local opts = { noremap = true, silent = true }
 
-        -- Move to previous/next
-        map('n', '<A-,>', '<cmd>BufferPrevious<cr>', opts)
-        map('n', '<A-.>', '<cmd>BufferNext<cr>', opts)
         -- Re-order to previous/next
         map('n', '<A-<>', '<cmd>BufferMovePrevious<cr>', opts)
         map('n', '<A->>', '<cmd>BufferMoveNext<cr>', opts)
@@ -42,15 +39,6 @@
         map('n', '<A-8>', '<cmd>BufferGoto 8<cr>', opts)
         map('n', '<A-9>', '<cmd>BufferGoto 9<cr>', opts)
         map('n', '<A-0>', '<cmd>BufferLast<cr>', opts)
-
-        -- Pin/unpin buffer
-        map('n', '<leader>bp', '<cmd>BufferPin<cr>', opts)
-        -- Close buffer
-        map('n', '<leader>bc', '<cmd>BufferClose<cr>', opts)
-        -- Magic buffer-picking mode
-        map('n', '<leader>bm', '<cmd>BufferPick<cr>', opts)
-        -- Close commands
-        map('n', '<leader>bx', '<cmd>BufferCloseAllButPinned<cr>', opts)
       '';
     }
     # https://github.com/kyazdani42/nvim-tree.lua/
@@ -59,7 +47,6 @@
       type = "lua";
       config = ''
         require('nvim-tree').setup{}
-        vim.keymap.set('n', '<leader>ee', '<cmd>NvimTreeToggle<cr>')
 
         local nvim_tree_events = require('nvim-tree.events')
         local bufferline_state = require('bufferline.api')

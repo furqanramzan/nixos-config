@@ -6,7 +6,6 @@
       type = "lua";
       config = ''
         vim.g.undotree_SetFocusWhenToggle = 1
-        vim.keymap.set('n', '<leader>uu', '<cmd>UndotreeToggle<cr>')
       '';
     }
   ];
