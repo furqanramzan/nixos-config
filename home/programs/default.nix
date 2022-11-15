@@ -16,5 +16,6 @@
     ./neovim
     ./xdg.nix
     ./pnpm.nix
+    ./git.nix
   ];
 }
