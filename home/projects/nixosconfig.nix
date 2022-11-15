@@ -20,7 +20,7 @@ in {
 
         windows:
           - editor: $EDITOR .
-          - server: nixos-rebuild build --flake .#config
+          - server:
           - command:
       '';
     };
