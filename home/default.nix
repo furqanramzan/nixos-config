@@ -17,7 +17,7 @@
     ./activation.nix
   ];
 
-  colorScheme = nix-colors.colorSchemes.onedark;
+  colorScheme = nix-colors.colorSchemes.tokyo-night-storm;
 
   home = {
     inherit homeDirectory stateVersion username;

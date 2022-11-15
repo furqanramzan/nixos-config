@@ -46,7 +46,11 @@
       plugin = nvim-tree-lua;
       type = "lua";
       config = ''
-        require('nvim-tree').setup{}
+        require('nvim-tree').setup{
+          update_focused_file = {
+            enable = true,
+          },
+        }
 
         local nvim_tree_events = require('nvim-tree.events')
         local bufferline_state = require('bufferline.api')
