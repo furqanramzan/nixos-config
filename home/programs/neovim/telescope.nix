@@ -1,6 +1,7 @@
 {pkgs, ...}: {
-  home.packages = [
-    pkgs.ripgrep # Required for live_grep by neovim telescope plugin.
+  home.packages = with pkgs; [
+    ripgrep # Required for live_grep by neovim telescope plugin.
+    fd
   ];
 
   programs.neovim.plugins = with pkgs; [

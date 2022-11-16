@@ -9,14 +9,17 @@ in {
     # Automatically spawn a session if trying to attach and none are running.
     newSession = true;
     tmuxinator.enable = true;
+    terminal = "screen-256color";
+    escapeTime = 0;
     extraConfig = ''
       # Enable mouse
       setw -g mouse on
 
       # COLOUR (base16)
+      set-option -sa terminal-overrides ',alacritty:RGB'
 
       # default statusbar colors
-      set-option -g status-style "fg=#${colors.base04},bg=#${colors.base01}"
+      set-option -g status-style "fg=#${colors.base04},bg=#${colors.base02}"
 
       # default window title colors
       set-window-option -g window-status-style "fg=#${colors.base04},bg=default"
@@ -57,5 +60,25 @@ in {
           - command:
       '';
     };
+  };
+  home.file."${config.colorscheme.slug}.css" = {
+    text = ''
+      .base00 { color: "#${config.colorscheme.colors.base00}";}
+      .base01 { color: "#${config.colorscheme.colors.base01}";}
+      .base02 { color: "#${config.colorscheme.colors.base02}";}
+      .base03 { color: "#${config.colorscheme.colors.base03}";}
+      .base04 { color: "#${config.colorscheme.colors.base04}";}
+      .base05 { color: "#${config.colorscheme.colors.base05}";}
+      .base06 { color: "#${config.colorscheme.colors.base06}";}
+      .base07 { color: "#${config.colorscheme.colors.base07}";}
+      .base08 { color: "#${config.colorscheme.colors.base08}";}
+      .base09 { color: "#${config.colorscheme.colors.base09}";}
+      .base0A { color: "#${config.colorscheme.colors.base0A}";}
+      .base0B { color: "#${config.colorscheme.colors.base0B}";}
+      .base0C { color: "#${config.colorscheme.colors.base0C}";}
+      .base0D { color: "#${config.colorscheme.colors.base0D}";}
+      .base0E { color: "#${config.colorscheme.colors.base0E}";}
+      .base0F { color: "#${config.colorscheme.colors.base0F}";}
+    '';
   };
 }
