@@ -21,5 +21,10 @@
 
   home = {
     inherit homeDirectory stateVersion username;
+    file = {
+      ".gitignore" = {
+        source = ./gitignore.home;
+      };
+    };
   };
 }
