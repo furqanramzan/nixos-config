@@ -17,5 +17,6 @@
     ./xdg.nix
     ./pnpm.nix
     ./git.nix
+    ./gtk.nix
   ];
 }
