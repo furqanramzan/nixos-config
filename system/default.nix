@@ -2,10 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
-  username,
   modulesPath,
+  outputs,
+  configs,
   ...
-}: {
+}: let
+  inherit (configs) username stateVersion;
+in {
   imports = [
     # Include the results of the hardware scan.
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -36,5 +39,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system = {inherit stateVersion;}; # Did you read the comment?
 }

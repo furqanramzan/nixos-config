@@ -1,8 +1,6 @@
-{
-  name,
-  email,
-  ...
-}: {
+{configs, ...}: let
+  inherit (configs) name email;
+in {
   programs.git = {
     enable = true;
     config = {

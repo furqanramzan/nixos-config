@@ -1,4 +1,6 @@
-{homeDirectory, ...}: {
+{configs, ...}: let
+  inherit (configs) homeDirectory;
+in {
   fileSystems."/" = {
     device = "/dev/disk/by-label/nixos";
     fsType = "ext4";

@@ -1,12 +1,11 @@
 {
-  homeDirectory,
-  stateVersion,
-  username,
-  nix-colors,
-  plasma-manager,
-  android-nixpkgs,
+  inputs,
+  configs,
   ...
-}: {
+}: let
+  inherit (inputs) plasma-manager nix-colors android-nixpkgs;
+  inherit (configs) username homeDirectory stateVersion;
+in {
   imports = [
     nix-colors.homeManagerModule
     plasma-manager.homeManagerModules.plasma-manager

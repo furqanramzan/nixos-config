@@ -32,12 +32,16 @@
     nix-colors,
     plasma-manager,
     android-nixpkgs,
-  }: let
+  } @ inputs: let
     username = "furqan"; # $USER
     name = "Muhammad Furqan"; # $NAME
     email = "furqanramzan271996@gmail.com"; # $EMAIL
     system = "x86_64-linux"; # x86_64-linux, aarch64-multiplatform, etc.
     stateVersion = "22.05"; # See https://nixos.org/manual/nixpkgs/stable for most recent
+    homeDirectory = "/home/${username}";
+    configs = {inherit username name email homeDirectory system stateVersion;};
+    inherit (self) outputs;
+
     pkgs-common-config = {
       inherit system;
       config = {
@@ -53,20 +57,14 @@
       };
     pkgs = import nixpkgs pkgs-config;
 
-    homeDirPrefix =
-      if pkgs.stdenv.hostPlatform.isDarwin
-      then "/Users"
-      else "/home";
-    homeDirectory = "${homeDirPrefix}/${username}";
-
     home = import ./home {
-      inherit homeDirectory pkgs stateVersion system username nix-colors plasma-manager android-nixpkgs;
+      inherit configs inputs outputs;
     };
   in {
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit username name email pkgs homeDirectory;};
+        specialArgs = {inherit pkgs configs inputs outputs;};
         modules = [
           ./system/pc.nix
           home-manager.nixosModules.home-manager
@@ -85,7 +83,7 @@
     nixosConfigurations = {
       cc = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {inherit username name email pkgs homeDirectory;};
+        specialArgs = {inherit pkgs configs inputs outputs;};
         modules = [
           ./system/cc.nix
           home-manager.nixosModules.home-manager
@@ -96,6 +94,7 @@
             # On activation move existing files by appending the given file extension rather than exiting with an error.
             home-manager.backupFileExtension = "backup";
             home-manager.users.${username} = home;
+            home-manager.extraSpecialArgs = {inherit configs inputs outputs;};
           }
         ];
       };
@@ -103,7 +102,7 @@
 
     homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-
+      extraSpecialArgs = {inherit configs inputs outputs;};
       modules = [
         home
       ];

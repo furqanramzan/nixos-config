@@ -53,9 +53,11 @@
 
           f = {
             name = "Telescope",
-            f = { "<cmd>Telescope git_files<cr>", "Find File" },
+            f = { "<cmd>Telescope find_files<cr>", "Find File" },
+            g = { "<cmd>Telescope git_files<cr>", "Find Git File" },
             t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
             b = { "<cmd>Telescope buffers<cr>", "Find Buffer" },
+            d = { "<cmd>Telescope diagnostics<cr>", "Find Diagnostics" },
             h = { "<cmd>Telescope help_tags<cr>", "Find Help Tag" },
             c = { "<cmd>Telescope commands<cr>", "Find Command" },
             m = { "<cmd>Telescope man_pages<cr>", "Find Manual Page" },
