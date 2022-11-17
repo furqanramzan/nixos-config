@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-22.05";
 
     nix-colors.url = "github:misterio77/nix-colors";
 
@@ -27,7 +26,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
     home-manager,
     nix-colors,
     plasma-manager,
