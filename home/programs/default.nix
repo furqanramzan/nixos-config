@@ -19,5 +19,6 @@
     ./git.nix
     ./gtk.nix
     ./font.nix
+    ./editorconfig.nix
   ];
 }

@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  fonts.fontconfig.enable = true;
+
   fontProfiles = {
     enable = true;
     monospace = {
