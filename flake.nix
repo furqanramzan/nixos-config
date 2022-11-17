@@ -61,6 +61,8 @@
       inherit configs inputs outputs;
     };
   in {
+    homeManagerModules = import ./modules/home-manager;
+
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         inherit system;

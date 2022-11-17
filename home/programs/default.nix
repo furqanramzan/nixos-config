@@ -18,5 +18,6 @@
     ./pnpm.nix
     ./git.nix
     ./gtk.nix
+    ./font.nix
   ];
 }

@@ -5,7 +5,7 @@ in {
     enable = true;
     settings = {
       font = {
-        family = "Ubuntu";
+        inherit (config.fontProfiles.regular) family;
         size = 16;
       };
       colors = {

@@ -9,7 +9,7 @@ in rec {
   gtk = {
     enable = true;
     font = {
-      name = "Ubunu";
+      name = config.fontProfiles.regular.family;
       size = 12;
     };
     theme = {
