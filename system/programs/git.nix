@@ -5,7 +5,7 @@ in {
     enable = true;
     config = {
       init = {
-        defaultBranch = "master";
+        defaultBranch = "main";
       };
       user = {
         inherit name;
