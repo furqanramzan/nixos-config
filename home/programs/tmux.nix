@@ -61,24 +61,4 @@ in {
       '';
     };
   };
-  home.file."${config.colorscheme.slug}.css" = {
-    text = ''
-      .base00 { color: "#${config.colorscheme.colors.base00}";}
-      .base01 { color: "#${config.colorscheme.colors.base01}";}
-      .base02 { color: "#${config.colorscheme.colors.base02}";}
-      .base03 { color: "#${config.colorscheme.colors.base03}";}
-      .base04 { color: "#${config.colorscheme.colors.base04}";}
-      .base05 { color: "#${config.colorscheme.colors.base05}";}
-      .base06 { color: "#${config.colorscheme.colors.base06}";}
-      .base07 { color: "#${config.colorscheme.colors.base07}";}
-      .base08 { color: "#${config.colorscheme.colors.base08}";}
-      .base09 { color: "#${config.colorscheme.colors.base09}";}
-      .base0A { color: "#${config.colorscheme.colors.base0A}";}
-      .base0B { color: "#${config.colorscheme.colors.base0B}";}
-      .base0C { color: "#${config.colorscheme.colors.base0C}";}
-      .base0D { color: "#${config.colorscheme.colors.base0D}";}
-      .base0E { color: "#${config.colorscheme.colors.base0E}";}
-      .base0F { color: "#${config.colorscheme.colors.base0F}";}
-    '';
-  };
 }

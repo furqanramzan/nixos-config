@@ -75,6 +75,7 @@
             # On activation move existing files by appending the given file extension rather than exiting with an error.
             home-manager.backupFileExtension = "backup";
             home-manager.users.${username} = home;
+            home-manager.extraSpecialArgs = {inherit configs inputs outputs;};
           }
         ];
       };
