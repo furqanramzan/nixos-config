@@ -20,6 +20,7 @@ in {
     ./nix.nix
     ./miscellaneous.nix
     ./hardware
+    ./containers
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
