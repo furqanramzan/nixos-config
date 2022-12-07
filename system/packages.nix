@@ -18,5 +18,6 @@
     tmux
     ranger # Console based file manager.
     openssl # A cryptographic library that implements the SSL and TLS protocols.
+    notify-desktop # Lets you send desktop notifications with one command
   ];
 }

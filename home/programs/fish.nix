@@ -13,7 +13,7 @@
         if test $CMD_DURATION
             if test $CMD_DURATION -gt (math "1000 * 5")
                 set secs (math "$CMD_DURATION / 1000")
-                echo "$history[1]" "-> Returned $status, took $secs seconds" > /dev/pts/0
+                notify-desktop "$history[1] -> Returned $status, took $secs seconds"
             end
         end
       '';
