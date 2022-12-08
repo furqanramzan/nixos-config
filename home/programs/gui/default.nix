@@ -1,4 +1,12 @@
 {pkgs, ...}: {
+  imports = [
+    ./firefox.nix
+    ./chromium.nix
+    ./vlc
+    ./xdg.nix
+    ./gtk.nix
+    ./font.nix
+  ];
   home.packages = with pkgs; [
     google-chrome
     # vivaldi
@@ -20,18 +28,9 @@
     easytag
     audacity
 
-    sqlitebrowser
-    drawio
-    insomnia
-    postman
-    sublime-merge
-    dbeaver
-
     # mpv
     # pavucontrol # Audio Control
     cmus # Command line audio player
-
-    # slack
-    # skypeforlinux
+    simplescreenrecorder
   ];
 }

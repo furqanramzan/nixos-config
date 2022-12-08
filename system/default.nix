@@ -14,7 +14,6 @@ in {
     (modulesPath + "/installer/scan/not-detected.nix")
     ./filesystem.nix
     ./programs
-    ./packages.nix
     ./services.nix
     ./fonts.nix
     ./nix.nix

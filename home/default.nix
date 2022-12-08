@@ -14,7 +14,6 @@ in {
       android-nixpkgs.hmModule
       ./programs
       ./projects
-      ./packages.nix
       ./activation.nix
     ]
     ++ (builtins.attrValues outputs.homeManagerModules);
