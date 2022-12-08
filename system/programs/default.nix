@@ -1,5 +1,6 @@
 {
   imports = [
+    ./database
     ./sway.nix
     ./docker.nix
     ./git.nix
@@ -7,7 +8,6 @@
     ./gnupg.nix
     ./tlp.nix
     ./fish.nix
-    ./mysql.nix
     ./sddm.nix
     ./plasma.nix
     ./cpp.nix
