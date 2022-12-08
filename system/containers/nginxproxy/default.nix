@@ -1,13 +1,11 @@
-{configs, ...}: let
-  inherit (configs) homeDirectory;
-in {
+{
   imports = [
     ./certs.nix
   ];
 
   virtualisation.oci-containers.containers.nginxproxy = {
     autoStart = true;
-    image = "jwilder/nginx-proxy";
+    image = "jwilder/nginx-proxy:alpine";
     ports = [
       "80:80"
       "443:443"
