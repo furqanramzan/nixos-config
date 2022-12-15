@@ -11,4 +11,7 @@
       ".local/bin/pnpx".source = "${pkgs.nodePackages_latest.pnpm}/lib/node_modules/pnpm/bin/pnpx.cjs";
     };
   };
+  home.file.".yarnrc".text = ''
+    cafile: /etc/certs/rootCA.crt
+  '';
 }
