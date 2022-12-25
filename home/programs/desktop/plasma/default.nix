@@ -3,10 +3,7 @@
     enable = true;
     shortcuts = {
       "code.desktop"."_launch" = "Meta+C";
-      "code.desktop"."new-empty-window" = "Meta+Shift+C";
-      "google-chrome.desktop"."_launch" = "Meta+W";
-      "google-chrome.desktop"."new-private-window" = "Meta+Shift+W";
-      "slack.desktop"."_launch" = "Meta+B";
+      "firefox.desktop"."_launch" = "Meta+W";
     };
     files = {
       # Appearance->Launce Feedback. Stop animation after n second

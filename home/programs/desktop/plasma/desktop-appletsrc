@@ -105,7 +105,7 @@ DialogWidth=720
 
 [Containments][2][Applets][5][Configuration][General]
 groupingStrategy=0
-launchers=applications:org.kde.dolphin.desktop,applications:firefox.desktop,applications:Alacritty.desktop
+launchers=
 maxStripes=1
 showToolTips=false
 
