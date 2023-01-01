@@ -49,7 +49,6 @@
 
                 -- Markdown
                 builtins.formatting.markdownlint,
-                builtins.diagnostics.markdownlint,
 
                 -- SQL
                 builtins.diagnostics.sqlfluff,
