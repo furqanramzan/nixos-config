@@ -6,6 +6,7 @@
     nodePackages.pm2
     nodePackages.vue-cli
     nodePackages.typescript
+    nodePackages_latest.npm-check-updates
   ];
 
   programs.npm = {
