@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ./theme
+    # ./theme
+    ./theme.nix
     ./whichkey.nix
     ./lsp.nix
     ./nullls.nix

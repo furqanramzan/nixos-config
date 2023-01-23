@@ -75,7 +75,7 @@
     # Add ~/.local/bin/ to $PATH
     localBinInPath = true;
     variables = {
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
       EDITOR = "nvim";
       VISUAL = "nvim";
     };
