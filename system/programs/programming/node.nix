@@ -7,6 +7,7 @@
     nodePackages.vue-cli
     nodePackages.typescript
     nodePackages_latest.npm-check-updates
+    nodePackages_latest.react-native-cli
   ];
 
   programs.npm = {
