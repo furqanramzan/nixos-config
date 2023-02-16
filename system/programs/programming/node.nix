@@ -1,13 +1,13 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nodejs
-    nodePackages_latest.pnpm
+    nodePackages.pnpm
     yarn
     nodePackages.pm2
     nodePackages.vue-cli
     nodePackages.typescript
-    nodePackages_latest.npm-check-updates
-    nodePackages_latest.react-native-cli
+    nodePackages.npm-check-updates
+    nodePackages.react-native-cli
   ];
 
   programs.npm = {
@@ -16,8 +16,8 @@
     npmrc = ''
       prefix=$HOME/.npm
       color=true
-      cafile="/etc/certs/rootCA.crt"
-      registry=https://npmjs.localhost/
+      # cafile="/etc/certs/rootCA.crt"
+      # registry=https://npmjs.localhost/
     '';
   };
 }
