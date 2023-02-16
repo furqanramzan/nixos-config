@@ -61,6 +61,14 @@
   in {
     homeManagerModules = import ./modules/home-manager;
 
+    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {inherit configs inputs outputs;};
+      modules = [
+        home
+      ];
+    };
+
     nixosConfigurations = {
       pc = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -79,9 +87,6 @@
           }
         ];
       };
-    };
-
-    nixosConfigurations = {
       cc = nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {inherit pkgs configs inputs outputs;};
@@ -100,13 +105,6 @@
         ];
       };
     };
-
-    homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {inherit configs inputs outputs;};
-      modules = [
-        home
-      ];
-    };
+    devShells.${system}.default = import ./shells/node14.nix {inherit pkgs;};
   };
 }
