@@ -9,6 +9,7 @@
   ];
   environment.systemPackages = with pkgs; [
     wget
+    whois
     which
     htop # Resource monitoring tool.
     btop # Replacement of htop.
@@ -20,5 +21,6 @@
     tmux
     ranger # Console based file manager.
     notify-desktop # Lets you send desktop notifications with one command
+    sonar-scanner-cli
   ];
 }
