@@ -14,7 +14,6 @@
     enable = true;
     package = pkgs.nodePackages.npm;
     npmrc = ''
-      prefix=$HOME/.npm
       color=true
       # cafile="/etc/certs/rootCA.crt"
       # registry=https://npmjs.localhost/

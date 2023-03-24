@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.nodePackages_latest.pnpm];
+  home.packages = [pkgs.nodePackages.pnpm];
 
   home = {
     sessionPath = ["$HOME/.pnpm"];
