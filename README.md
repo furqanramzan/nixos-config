@@ -53,3 +53,9 @@ To fix `Connection activation failed: Secrets were required, but not provided.`,
 ```bash
 nmcli con delete <SSID>
 ```
+
+To fix `Unable to negotiate with 192.168.1.1 port 21098: no matching host key type found. Their offer: ssh-rsa,ssh-dss`, while connecting to server using ssh.
+
+```bash
+ssh -oHostKeyAlgorithms=+ssh-dss user@host.com -p21098
+```
