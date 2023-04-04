@@ -8,6 +8,7 @@
     ./font.nix
   ];
   home.packages = with pkgs; [
+    mongodb-compass
     google-chrome
     # vivaldi
     # opera
