@@ -2,7 +2,7 @@
   imports = [
     # ./verdaccio
     # ./nginxproxy
-    ./mongodb.nix
+    # ./mongodb.nix
   ];
 
   virtualisation.oci-containers.backend = "docker";
