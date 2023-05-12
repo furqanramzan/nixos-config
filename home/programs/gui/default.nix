@@ -10,6 +10,9 @@
   home.packages = with pkgs; [
     mongodb-compass
     google-chrome
+    microsoft-edge-beta
+    opera
+    bleachbit
     # vivaldi
     # opera
     transmission-qt
@@ -33,5 +36,6 @@
     # pavucontrol # Audio Control
     cmus # Command line audio player
     simplescreenrecorder
+    libsForQt5.filelight
   ];
 }
