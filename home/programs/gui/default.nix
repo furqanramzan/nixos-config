@@ -16,6 +16,7 @@
     # vivaldi
     # opera
     transmission-qt
+    skypeforlinux
 
     # anydesk
     # teamviewer
