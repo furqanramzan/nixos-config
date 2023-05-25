@@ -1,9 +1,9 @@
 {config, ...}: let
   project = {
-    name = "bleufox";
-    shortName = "bfx";
+    name = "portfolio";
+    shortName = "ptf";
     codeDir = "code";
-    repository_url = "git@bitbucket.org:cooperativecomputing/bleu-fox.git";
+    repository_url = "git@gitlab.com:furqan271996/portfolio";
   };
   inherit (config.xdg) configHome;
   inherit (config.home) homeDirectory;
@@ -20,32 +20,24 @@ in {
 
         windows:
           - editor: $EDITOR .
-          - server: pnpm dev
+          - server: pnpm run dev
           - command:
       '';
     };
   };
   home.file."data/projects/${project.name}/bootstrap.sh" = {
     text = ''
-      ${builtins.readFile ../common.sh}
+      ${builtins.readFile ./common.sh}
 
       repository_url="${project.repository_url}"
-      database_name="${project.name}"
       initialize() {
         clone $repository_url
-        install pnpm
-        database $database_name "create"
         cd $code_dir
-        git config --local user.email "muhammad.furqan@cooperativecomputing.com"
-        cp .env.example .env
-        pnpm run migrate
-        pnpm run seed
-        pnpm run storage:link
-        git config core.hooksPath .githooks
+        install pnpm
         cd -
       }
 
-      ${builtins.readFile ../project.sh}
+      ${builtins.readFile ./project.sh}
     '';
     executable = true;
   };

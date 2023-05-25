@@ -3,6 +3,6 @@
     ./nixosconfig.nix
     ./bph.nix
     ./nx.nix
-    ./cc
+    ./portfolio.nix
   ];
 }
