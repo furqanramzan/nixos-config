@@ -11,7 +11,7 @@
     extraPackages = with pkgs; [
       autotiling
       rofi
-      light
+      brightnessctl
       waybar
       xwayland
       mako # notification daemon

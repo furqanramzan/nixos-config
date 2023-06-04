@@ -147,8 +147,8 @@
         #"XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         #"XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         #
-        "XF86MonBrightnessDown" = "exec ${pkgs.light}/bin/light -U  5"; # Display brightness control
-        "XF86MonBrightnessUp" = "exec ${pkgs.light}/bin/light -A 5";
+        "XF86MonBrightnessUp" = "exec ${pkgs.brightnessctl}/bin/brightnessctl s +2%";
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl s 2%-"; # Display brightness control
       };
     };
     extraConfig = ''
