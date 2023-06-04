@@ -6,5 +6,6 @@
     ./fzf.nix
     ./neovim
     ./git.nix
+    ./openssh.nix
   ];
 }
