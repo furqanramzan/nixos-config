@@ -1,9 +1,4 @@
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
   xdg = {
     enable = true;
     userDirs = {
@@ -22,6 +17,8 @@
         XDG_NAATS_DIR = "$HOME/data/naats";
         XDG_SONGS_DIR = "$HOME/data/songs";
         XDG_PROJECTS_DIR = "$HOME/data/projects";
+        XDG_EXAMPLES_DIR = "$HOME/data/examples";
+        XDG_PRACTISES_DIR = "$HOME/data/practises";
       };
     };
   };

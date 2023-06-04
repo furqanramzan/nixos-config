@@ -20,6 +20,8 @@
     };
     shellAbbrs = {
       p = "cd $XDG_PROJECTS_DIR";
+      e = "cd $XDG_EXAMPLES_DIR";
+      s = "cd $XDG_PRACTISES_DIR";
       tms = "tmuxinator start";
     };
   };
