@@ -4,5 +4,6 @@
     ./bph.nix
     ./nx.nix
     ./portfolio.nix
+    ./upworkjobfilter.nix
   ];
 }
