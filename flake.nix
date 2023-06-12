@@ -35,7 +35,7 @@
     name = "Muhammad Furqan"; # $NAME
     email = "furqanramzan271996@gmail.com"; # $EMAIL
     system = "x86_64-linux"; # x86_64-linux, aarch64-multiplatform, etc.
-    stateVersion = "22.05"; # See https://nixos.org/manual/nixpkgs/stable for most recent
+    stateVersion = "23.05"; # See https://nixos.org/manual/nixpkgs/stable for most recent
     homeDirectory = "/home/${username}";
     configs = {inherit username name email homeDirectory system stateVersion;};
     inherit (self) outputs;
