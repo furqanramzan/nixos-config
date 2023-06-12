@@ -8,6 +8,7 @@
     ./font.nix
   ];
   home.packages = with pkgs; [
+    xcolor
     mongodb-compass
     google-chrome
     microsoft-edge-beta
@@ -22,6 +23,7 @@
     # teamviewer
 
     libreoffice
+    libsForQt5.kate
     # calibre
 
     # blender
@@ -29,6 +31,7 @@
     # kdenlive
     # inkscape
     # handbrake
+    kget
 
     easytag
     audacity
