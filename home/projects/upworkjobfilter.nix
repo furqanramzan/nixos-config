@@ -20,8 +20,8 @@ in {
 
         windows:
           - editor: $EDITOR .
-          - server: nix develop
-          - command: nix develop
+          - server: pnpm run dev
+          - command:
       '';
     };
   };
@@ -32,6 +32,8 @@ in {
       repository_url="${project.repository_url}"
       initialize() {
         clone $repository_url
+        echo "use flake" >> $code_dir/.envrc
+        direnv allow $code_dir
         cd $code_dir
         cp .env.example .env
         install pnpm

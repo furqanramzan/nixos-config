@@ -7,5 +7,6 @@
     ./neovim
     ./git.nix
     ./openssh.nix
+    ./direnv
   ];
 }
