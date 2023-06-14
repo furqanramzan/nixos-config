@@ -1,13 +1,11 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     nodejs
-    nodePackages.pnpm
     yarn
+    nodePackages.pnpm
     nodePackages.pm2
-    nodePackages.vue-cli
     nodePackages.typescript
     nodePackages.npm-check-updates
-    nodePackages.react-native-cli
   ];
 
   programs.npm = {
