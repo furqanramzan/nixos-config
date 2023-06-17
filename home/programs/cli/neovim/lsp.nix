@@ -2,30 +2,24 @@
   home.packages = with pkgs; [
     # Javascript, Typescript, JSX, TSX
     nodePackages.typescript-language-server
-    # Bash
     nodePackages.bash-language-server
     # Go
     gopls
     # HTML, CSS, JSON
     nodePackages.vscode-langservers-extracted
-    # Lua
     sumneko-lua-language-server
     # Nix
     rnix-lsp
     # PHP
     nodePackages.intelephense
-    # Python
     python310Packages.python-lsp-server
-    # Rust
     rust-analyzer
-    # Svelte
     nodePackages.svelte-language-server
-    # Vue
-    nodePackages.vls
-    # YAML
     nodePackages.yaml-language-server
-    # Docker
     nodePackages.dockerfile-language-server-nodejs
+    nodePackages.grammarly-languageserver
+    # Vue
+    nodePackages.volar
   ];
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
@@ -185,6 +179,41 @@
         }
         -- dockerfile-language-server-nodejs
         lspconfig.dockerls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.volar.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.tailwindcss.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.astro.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.emmet_ls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.grammarly.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.nxls.setup {
+          on_attach = on_attach,
+          flags = lsp_flags,
+          capabilities = capabilities,
+        }
+        lspconfig.prismals.setup {
           on_attach = on_attach,
           flags = lsp_flags,
           capabilities = capabilities,

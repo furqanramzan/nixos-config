@@ -3,6 +3,8 @@
     # ./theme
     ./theme.nix
     ./whichkey.nix
+    # mason and lsp must be in following sequence
+    ./mason.nix
     ./lsp.nix
     ./nullls.nix
     ./syntax.nix
