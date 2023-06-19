@@ -22,6 +22,7 @@ in {
           - editor: $EDITOR .
           - server: pnpm run dev
           - command:
+          - production: cd ../production
       '';
     };
   };
@@ -32,15 +33,28 @@ in {
       repository_url="${project.repository_url}"
       initialize() {
         clone $repository_url
-        echo "use flake" >> $code_dir/.envrc
-        direnv allow $code_dir
         cd $code_dir
+        echo "use flake" >> .envrc
+        direnv allow .
+        eval "$(direnv export bash)"
         cp .env.example .env
         install pnpm
         pnpm run push
         pnpm nuxt prepare
         git config core.hooksPath .githooks
-        cd -
+
+        # production
+        cd ../
+        clone $repository_url production
+        cd production
+        echo "use flake" >> .envrc
+        direnv allow .
+        eval "$(direnv export bash)"
+        cp .env.example .env
+        install pnpm
+        pnpm run push
+        pnpm nuxt prepare
+        git config core.hooksPath .githooks
       }
 
       ${builtins.readFile ./project.sh}

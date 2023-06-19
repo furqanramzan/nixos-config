@@ -13,7 +13,7 @@ clone() {
 
     url=$1
     path=$code_dir
-    [[ "${2-}" ]] && path="$code_dir/$2"
+    [[ "${2-}" ]] && path="$script_dir/$2"
 
     clone_project $url $path
 }
@@ -33,7 +33,7 @@ install() {
 
     packagemanager=$1
     path=$code_dir
-    [[ "${2-}" ]] && path="$code_dir/$2"
+    [[ "${2-}" ]] && path="$script_dir/$2"
 
     install_dependencies $packagemanager $path
 }
