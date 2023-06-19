@@ -14,7 +14,6 @@ in {
       android-nixpkgs.hmModule
       ./programs
       ./projects
-      ./activation.nix
     ]
     ++ (builtins.attrValues outputs.homeManagerModules);
 
@@ -22,10 +21,5 @@ in {
 
   home = {
     inherit homeDirectory stateVersion username;
-    file = {
-      ".gitignore" = {
-        source = ./gitignore.home;
-      };
-    };
   };
 }

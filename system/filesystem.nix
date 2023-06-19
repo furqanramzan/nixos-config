@@ -9,7 +9,7 @@ in {
   };
 
   fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-label/boot";
+    device = "/dev/disk/by-label/BOOT";
     fsType = "vfat";
   };
 

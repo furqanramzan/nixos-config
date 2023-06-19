@@ -4,7 +4,6 @@
     ./chromium.nix
     ./vlc
     ./xdg.nix
-    ./gtk.nix
     ./font.nix
   ];
   home.packages = with pkgs; [
