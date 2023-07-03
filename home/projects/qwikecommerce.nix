@@ -1,9 +1,9 @@
 {config, ...}: let
   project = {
-    name = "upworkjobfilter";
-    shortName = "ujf";
+    name = "qwikecommerce";
+    shortName = "qec";
     codeDir = "code";
-    repository_url = "git@github.com:furqanramzan/upwork-job-filter.git";
+    repository_url = "git@github.com:furqanramzan/qwik-ecommerce.git";
   };
   inherit (config.xdg) configHome;
   inherit (config.home) homeDirectory;
@@ -22,7 +22,6 @@ in {
           - editor: $EDITOR .
           - server: pnpm run dev
           - command:
-          - production: cd ../production
       '';
     };
   };
@@ -36,16 +35,6 @@ in {
         cd $code_dir
         cp .env.example .env
         install pnpm
-        pnpm prepare
-        git config core.hooksPath .githooks
-
-        # production
-        cd ../
-        clone $repository_url production
-        cd production
-        cp .env.example .env
-        install pnpm
-        pnpm prepare
         git config core.hooksPath .githooks
       }
 

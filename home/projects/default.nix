@@ -5,5 +5,7 @@
     ./nx.nix
     ./portfolio.nix
     ./upworkjobfilter.nix
+    ./qwikecommerce.nix
+    ./sveltekitecommerce.nix
   ];
 }
