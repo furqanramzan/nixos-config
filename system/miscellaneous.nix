@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: {
   # Set your time zone.
@@ -78,6 +79,7 @@
       TERMINAL = "alacritty";
       EDITOR = "nvim";
       VISUAL = "nvim";
+      LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
     };
   };
 
